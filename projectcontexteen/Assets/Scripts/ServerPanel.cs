@@ -10,42 +10,52 @@ using UnityEngine.UI;
 public class ServerPanel : MonoBehaviour
 {  
     private string currentScene = "StartScene";
-	private float ScreenWidth;
 
-    bool JoinButtonState = true;
+    bool JoinButtonState;
     public string myIpField = "";
 
-	private void OnGUI()
-	{
-        GUILayout.BeginArea(new Rect(0,0, Screen.width, Screen.height));
+    public Button HostButton;
+
+    private void Awake()
+    {
+        JoinButtonState = false;
+    }
+
+    private void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
         if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2) - 50, 300, 30), "Host"))
         {
             HostGame();
-		}
-        
+        }
+
         if (JoinButtonState)
-		{
-            if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2), 300, 30), "Join")) 
+        {
+            if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2), 300, 30), "Join"))
             {
                 JoinGame();
             }
         }
 
         myIpField = GUI.TextField(new Rect((Screen.width / 2) - 150, (Screen.height / 2) + 50, 300, 30), myIpField);
-        
+
+
         GUILayout.EndArea();
     }
 
+    private void Update()
+    {
+        SetIp();
+    }
 
-	public void SetIp()
+    public void SetIp()
     {
         if (myIpField != "")
         {
             PlayerPrefs.SetString("GameIP", myIpField);
             JoinButtonState = true;
             Debug.Log("you can join");
-
         }
         else
         {

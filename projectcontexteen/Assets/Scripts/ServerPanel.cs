@@ -8,20 +8,48 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ServerPanel : MonoBehaviour
-{
-    public Button joinButton;
-    public TMP_InputField ipInput;
+{  
+    private string currentScene = "StartScene";
+	private float ScreenWidth;
 
-    public void SetIp()
-    {
-        if (ipInput.text != "")
+    bool JoinButtonState = false;
+    public string myIpField = "barack";
+
+	private void OnGUI()
+	{
+        GUILayout.BeginArea(new Rect(0,0, Screen.width, Screen.height));
+
+        if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2) - 50, 300, 30), "Host"))
         {
-            PlayerPrefs.SetString("GameIP", ipInput.text);
-            joinButton.interactable = true;
+            HostGame();
+		}
+        
+        if (JoinButtonState)
+		{
+            if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2), 300, 30), "Join")) 
+            {
+                JoinGame();
+            }
+        }
+
+        myIpField = GUI.TextField(new Rect((Screen.width / 2) - 150, (Screen.height / 2) + 50, 300, 30), myIpField);
+        
+        GUILayout.EndArea();
+    }
+
+
+	public void SetIp()
+    {
+        if (myIpField != "")
+        {
+            PlayerPrefs.SetString("GameIP", myIpField);
+            JoinButtonState = true;
+            Debug.Log("you can join");
+
         }
         else
         {
-            joinButton.interactable = false;
+            JoinButtonState = false;
         }
     }
 
@@ -29,13 +57,13 @@ public class ServerPanel : MonoBehaviour
     {
         PlayerPrefs.SetInt("Mode", 1);
         PlayerPrefs.SetString("GameIP", GetLocalIPAddress());
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(currentScene);
     }
 
     public void JoinGame()
     {
         PlayerPrefs.SetInt("Mode", 2);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(currentScene);
     }
 
     public static string GetLocalIPAddress()

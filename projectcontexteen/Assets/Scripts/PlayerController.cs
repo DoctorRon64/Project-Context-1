@@ -33,8 +33,7 @@ public class PlayerController : NetworkBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        //Rigidbody2D.AddForce(Speed * Time.deltaTime * new Vector2(horizontalInput, verticalInput));
-        gameObject.transform.position = new Vector2(horizontalInput, verticalInput);
+        Rigidbody2D.AddForce(Speed * Time.deltaTime * new Vector2(horizontalInput, verticalInput));
     }
 
     

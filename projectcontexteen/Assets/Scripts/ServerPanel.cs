@@ -12,8 +12,8 @@ public class ServerPanel : MonoBehaviour
     private string currentScene = "StartScene";
 	private float ScreenWidth;
 
-    bool JoinButtonState = false;
-    public string myIpField = "barack";
+    bool JoinButtonState = true;
+    public string myIpField = "";
 
 	private void OnGUI()
 	{

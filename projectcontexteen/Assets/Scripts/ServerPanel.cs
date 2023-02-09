@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -46,8 +47,9 @@ public class ServerPanel : MonoBehaviour
             {
                 return ip.ToString();
             }
+            Debug.Log(ip);
         }
-
+       
         throw new System.Exception("No network adapters with an IPv4 address in the system!");
     }
 }

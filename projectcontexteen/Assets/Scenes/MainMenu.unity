@@ -423,8 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906970bce2efc634c996a7f3b2a1789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myIpField: 10.3.24.134
-  HostButton: {fileID: 0}
+  myIpField: 
 --- !u!1 &495289478
 GameObject:
   m_ObjectHideFlags: 0

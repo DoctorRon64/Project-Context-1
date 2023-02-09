@@ -14,8 +14,6 @@ public class ServerPanel : MonoBehaviour
     bool JoinButtonState;
     public string myIpField = "";
 
-    public Button HostButton;
-
     private void Awake()
     {
         JoinButtonState = false;

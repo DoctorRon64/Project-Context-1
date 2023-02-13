@@ -7,7 +7,7 @@ public class PlayerController : NetworkBehaviour
 {
     public float Speed;
 	private Rigidbody2D Rigidbody2D;
-     
+    
 
 	void Awake()
     {
@@ -15,7 +15,6 @@ public class PlayerController : NetworkBehaviour
 
         Camera.main.GetComponent<CameraFollow>().Target = gameObject;
         Camera.main.GetComponent<CameraFollow>().enabled = true;
-
     }
 
     public override void OnNetworkSpawn()

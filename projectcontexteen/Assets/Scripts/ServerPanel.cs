@@ -11,36 +11,8 @@ public class ServerPanel : MonoBehaviour
 {  
     private string currentScene = "StartScene";
 
-    bool JoinButtonState;
-    public string myIpField = "";
-
-    private void Awake()
-    {
-        JoinButtonState = false;
-    }
-
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
-
-        if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2) - 50, 300, 30), "Host"))
-        {
-            HostGame();
-        }
-
-        if (JoinButtonState)
-        {
-            if (GUI.Button(new Rect((Screen.width / 2) - 150, (Screen.height / 2), 300, 30), "Join"))
-            {
-                JoinGame();
-            }
-        }
-
-        myIpField = GUI.TextField(new Rect((Screen.width / 2) - 150, (Screen.height / 2) + 50, 300, 30), myIpField);
-
-
-        GUILayout.EndArea();
-    }
+    public Button joinButton;
+    public TMP_InputField ipInput;
 
     private void Update()
     {
@@ -49,15 +21,16 @@ public class ServerPanel : MonoBehaviour
 
     public void SetIp()
     {
-        if (myIpField != "")
+        if (ipInput.text != "")
         {
-            PlayerPrefs.SetString("GameIP", myIpField);
-            JoinButtonState = true;
+            joinButton.interactable = true;
+            PlayerPrefs.SetString("GameIP", ipInput.text);
+            
             Debug.Log("you can join");
         }
         else
         {
-            JoinButtonState = false;
+            joinButton.interactable = false;
         }
     }
 

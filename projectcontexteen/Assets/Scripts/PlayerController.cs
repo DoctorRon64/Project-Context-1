@@ -5,9 +5,11 @@ using Unity.Netcode;
 
 public class PlayerController : NetworkBehaviour
 {
+    private Rigidbody2D Rigidbody2D;
     public float Speed;
-	private Rigidbody2D Rigidbody2D;
-    
+    public Sprite[] sprites;
+
+
 
 	void Awake()
     {

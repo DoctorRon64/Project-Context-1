@@ -6,10 +6,16 @@ using Unity.Netcode;
 public class PlayerController : NetworkBehaviour
 {
     public float Speed;
-	private Rigidbody2D Rigidbody2D;
-    
+    public float JumpHeight;
+    public float OverlapSphere;
 
-	void Awake()
+    public float horizontalInput;
+
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private LayerMask layerMask;
+
+    void Awake()
     {
         if (!IsOwner) return;
 
@@ -17,24 +23,48 @@ public class PlayerController : NetworkBehaviour
         Camera.main.GetComponent<CameraFollow>().enabled = true;
     }
 
-    public override void OnNetworkSpawn()
+	public override void OnNetworkSpawn()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!IsOwner) return;
 
-        transform.position += new Vector3(1, 0) * Input.GetAxis("Horizontal") * Time.deltaTime;
-
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Rigidbody2D.AddForce(Speed * Time.deltaTime * new Vector2(horizontalInput, verticalInput) * Time.deltaTime * Speed);
+        PlayerInput();
     }
 
-    
+	private void FixedUpdate()
+	{
+		PlayerMovement();
+	}
 
+	private void PlayerInput()
+	{
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, JumpHeight);
+        }
+
+        if (Input.GetButtonUp("Jump") && rb2d.velocity.y > 0f)
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
+        }
+    }
+
+    private void PlayerMovement()
+	{
+        rb2d.velocity = new Vector2 (horizontalInput * Speed, rb2d.velocity.y);
+	}
+
+    private bool IsGrounded()
+	{
+        return Physics2D.OverlapCircle(groundCheck.position, OverlapSphere, layerMask);
+	}
+
+    
 }
+

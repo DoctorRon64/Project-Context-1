@@ -25,12 +25,7 @@ public class GameInterface : MonoBehaviour
         ClipboardExtension.CopyToClipboard(ClipboardExtension.GetLocalIPAddress());
         ipInput.text = ClipboardExtension.GetLocalIPAddress();
     }
-
-
 }
-
-
-
 
 public static class ClipboardExtension
 {

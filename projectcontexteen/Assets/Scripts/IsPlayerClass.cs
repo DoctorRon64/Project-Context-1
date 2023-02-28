@@ -6,6 +6,13 @@ public class IsPlayerClass : NetworkBehaviour
     public int PlayerClass;
     public Sprite[] PlayerClassSprites;
     public SpriteRenderer SpriteRender;
+	public BoxCollider2D BoxCollider;
+
+	private void Awake()
+	{
+		BoxCollider = GetComponent<BoxCollider2D>();
+		PlayerClass = Random.Range(0, 3);
+	}
 
 	private void Start()
 	{		
@@ -20,7 +27,9 @@ public class IsPlayerClass : NetworkBehaviour
 
 	private void Update()
 	{
-		Flip();
+        SpriteRender.sprite = PlayerClassSprites[PlayerClass];
+
+        Flip();
 	}
 
 	public void Flip()
@@ -35,8 +44,22 @@ public class IsPlayerClass : NetworkBehaviour
 		}
 	}
 
-	private void PlayerIsArtist() { SpriteRender.sprite = PlayerClassSprites[PlayerClass]; }
-    private void PlayerIsDesigner() { SpriteRender.sprite = PlayerClassSprites[PlayerClass]; }
-    private void PlayerIsDev() { SpriteRender.sprite = PlayerClassSprites[PlayerClass]; }
+	private void PlayerIsArtist() 
+	{ 
+		SpriteRender.sprite = PlayerClassSprites[PlayerClass];
+		BoxCollider.offset = new Vector2(0.5f, 0);
+        BoxCollider.size = new Vector2(4, 13f);
+    }
+    private void PlayerIsDesigner() 
+	{
+		SpriteRender.sprite = PlayerClassSprites[PlayerClass];
+		BoxCollider.size = new Vector2(6, 12.6f);
+	}
+    private void PlayerIsDev()
+	{
+		SpriteRender.sprite = PlayerClassSprites[PlayerClass];
+        BoxCollider.offset = new Vector2(-0.2f, 0);
+        BoxCollider.size = new Vector2(8, 12.7f);
+    }
 
 }

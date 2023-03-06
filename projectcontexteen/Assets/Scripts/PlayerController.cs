@@ -35,36 +35,21 @@ public class PlayerController : NetworkBehaviour
         PlayerInput();
     }
 
-	private void FixedUpdate()
-	{
-		PlayerMovement();
-	}
-
 	private void PlayerInput()
 	{
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, JumpHeight);
+            rb2d.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
         }
 
-        if (Input.GetButtonUp("Jump") && rb2d.velocity.y > 0f)
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
-        }
+        rb2d.velocity = new Vector2(horizontalInput * Speed, rb2d.velocity.y);
     }
-
-    private void PlayerMovement()
-	{
-        rb2d.velocity = new Vector2 (horizontalInput * Speed, rb2d.velocity.y);
-	}
 
     private bool IsGrounded()
 	{
         return Physics2D.OverlapCircle(groundCheck.position, OverlapSphere, layerMask);
 	}
-
-    
 }
 

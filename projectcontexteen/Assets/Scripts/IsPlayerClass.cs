@@ -6,12 +6,12 @@ using Unity.Netcode;
 
 public class IsPlayerClass : NetworkBehaviour
 {
-    public Sprite[] PlayerClassSprites;
-    public SpriteRenderer SpriteRender;
+	public Sprite[] PlayerClassSprites;
+	public SpriteRenderer SpriteRender;
 	public BoxCollider2D BoxCollider;
 	private float StartSizeX;
 
-	public NetworkVariable<FixedString64Bytes> _PlayerClass = new NetworkVariable<FixedString64Bytes>("" , NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+	public NetworkVariable<FixedString64Bytes> _PlayerClass = new NetworkVariable<FixedString64Bytes>("", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 	public string PlayerClass;
 
 	private void Start()
@@ -58,7 +58,7 @@ public class IsPlayerClass : NetworkBehaviour
 		Flip();
 	}
 
-	public void Flip()
+	public virtual void Flip()
 	{
 		if (GetComponent<PlayerController>().horizontalInput != 0f)
 		{
@@ -66,20 +66,19 @@ public class IsPlayerClass : NetworkBehaviour
 		}
 	}
 
-	private void PlayerIsArtist() 
-	{ 
+	private void PlayerIsArtist()
+	{
 		SpriteRender.sprite = PlayerClassSprites[0];
-        BoxCollider.size = new Vector2(4, 13f);
-    }
-    private void PlayerIsDesigner() 
+		BoxCollider.size = new Vector2(4, 13f);
+	}
+	private void PlayerIsDesigner()
 	{
 		SpriteRender.sprite = PlayerClassSprites[1];
 		BoxCollider.size = new Vector2(6, 12.6f);
 	}
-    private void PlayerIsDev()
+	private void PlayerIsDev()
 	{
 		SpriteRender.sprite = PlayerClassSprites[2];
-        BoxCollider.size = new Vector2(8, 12.7f);
-    }
-
+		BoxCollider.size = new Vector2(8, 12.7f);
+	}
 }

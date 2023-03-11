@@ -70,15 +70,18 @@ public class IsPlayerClass : NetworkBehaviour
 	{
 		SpriteRender.sprite = PlayerClassSprites[0];
 		BoxCollider.size = new Vector2(4, 13f);
+		gameObject.tag = "Artist";
 	}
 	private void PlayerIsDesigner()
 	{
 		SpriteRender.sprite = PlayerClassSprites[1];
 		BoxCollider.size = new Vector2(6, 12.6f);
+		gameObject.tag = "Designer";
 	}
 	private void PlayerIsDev()
 	{
 		SpriteRender.sprite = PlayerClassSprites[2];
 		BoxCollider.size = new Vector2(8, 12.7f);
+		gameObject.tag = "Dev";
 	}
 }

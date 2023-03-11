@@ -25,8 +25,6 @@ public class ServerPanel : MonoBehaviour
         {
             joinButton.interactable = true;
             PlayerPrefs.SetString("GameIP", ipInput.text);
-            
-            Debug.Log("you can join");
         }
         else
         {

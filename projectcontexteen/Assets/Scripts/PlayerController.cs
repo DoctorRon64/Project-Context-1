@@ -15,12 +15,16 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private LayerMask layerMask;
 
-    void Awake()
+    void Start()
     {
         if (!IsOwner) return;
 
-        Camera.main.GetComponent<CameraFollow>().Target = gameObject;
-        Camera.main.GetComponent<CameraFollow>().enabled = true;
+        FindObjectOfType<CameraFollow>().GetComponent<CameraFollow>().Target = gameObject;
+        if (FindObjectOfType<Camera>().GetComponent<CameraFollow>().Target == null)
+		{
+            Debug.Log("ERRROORRR !!!1");
+            FindObjectOfType<CameraFollow>().GetComponent<CameraFollow>().Target = gameObject;
+        }
     }
 
 	public override void OnNetworkSpawn()

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - NetworkManager
   - MagicObject
+  - Artist
+  - Designer
+  - Dev
   layers:
   - Default
   - TransparentFX

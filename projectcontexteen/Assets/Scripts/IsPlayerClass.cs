@@ -33,7 +33,7 @@ public class IsPlayerClass : NetworkBehaviour
 					break;
 			}
 		}
-
+		FindObjectOfType<MagicObjectBehaviour>().InteractiveHUD.SetActive(false);
 		BoxCollider = GetComponent<BoxCollider2D>();
 		StartSizeX = transform.localScale.x;
 	}

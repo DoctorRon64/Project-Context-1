@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float Speed;
     public float JumpHeight;
@@ -15,35 +14,39 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private LayerMask layerMask;
 
+    public KeyCode LeftInput;
+    public KeyCode RightInput;
+    public KeyCode UpInput;
+
     void Start()
-    {
-        if (!IsOwner) return;
-
-        FindObjectOfType<CameraFollow>().GetComponent<CameraFollow>().Target = gameObject;
-        if (FindObjectOfType<Camera>().GetComponent<CameraFollow>().Target == null)
-		{
-            Debug.Log("ERRROORRR !!!1");
-            FindObjectOfType<CameraFollow>().GetComponent<CameraFollow>().Target = gameObject;
-        }
-    }
-
-	public override void OnNetworkSpawn()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (!IsOwner) return;
 
         PlayerInput();
     }
 
 	private void PlayerInput()
 	{
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        //horizontalInput = Input.GetAxisRaw("Horizontal");
+        
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+
+        /*if (Input.GetKeyDown(LeftInput))
+		{
+            horizontalInput = 1;
+		}
+
+
+        if (Input.GetKeyDown(RightInput))
+		{
+            horizontalInput = -1;
+		}*/
+
+        if (Input.GetKey(UpInput) && IsGrounded())
         {
             rb2d.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
         }

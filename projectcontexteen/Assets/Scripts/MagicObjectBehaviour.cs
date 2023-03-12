@@ -2,44 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Collections;
-using Unity.Netcode;
 using UnityEngine.UI;
 using TMPro;
 
-public class MagicObjectBehaviour : NetworkBehaviour
+public class MagicObjectBehaviour : MonoBehaviour
 {
-    public GameObject InteractiveHUD;
-	public TMP_Text Option1Text;
-	public TMP_Text Option2Text;
-	public TMP_Text Option3Text;
+	public GameObject InteractiveArtHUD;
+	public GameObject InteractiveDesignHUD;
+	public GameObject InteractiveDevHUD;
+
+	public bool[] SetValue = new bool[3];
+
+
+	public SpriteRenderer sprtrndr;
+	public Sprite[] ArtistImages;
+
+	
 
 	private void Start()
 	{
-		if (!IsOwner) return;
-		InteractiveHUD.SetActive(false);
+		InteractiveArtHUD.SetActive(false);
+		InteractiveDesignHUD.SetActive(false);
+		InteractiveDevHUD.SetActive(false);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Artist"))
 		{
-			InteractiveHUD.SetActive(true);
-			SetText("1", "2", "3");
-			Debug.Log("Artist");
+			if (SetValue[0])
+			{
+				InteractiveArtHUD.SetActive(true);
+			}
 		}
 
-		if (collision.CompareTag("Designer"))
+		if (collision.CompareTag("Design"))
 		{
-			InteractiveHUD.SetActive(true);
-			SetText("1", "2", "3");
-			Debug.Log("Design");
+			if (SetValue[1])
+			{
+				InteractiveDesignHUD.SetActive(true);
+			}
 		}
 
-		if (collision.CompareTag("Dev"))
+		if (collision.CompareTag("Development"))
 		{
-			InteractiveHUD.SetActive(true);
-			SetText("1", "2", "3");
-			Debug.Log("Dev");
+			if (SetValue[2])
+			{
+				InteractiveDevHUD.SetActive(true);
+			}
 		}
 	}
 
@@ -47,24 +57,77 @@ public class MagicObjectBehaviour : NetworkBehaviour
 	{
 		if (collision.CompareTag("Artist"))
 		{
-			InteractiveHUD.SetActive(false);
+			if (SetValue[0])
+			{
+				InteractiveArtHUD.SetActive(false);
+			}
 		}
 
-		if (collision.CompareTag("Designer"))
+		if (collision.CompareTag("Design"))
 		{
-			InteractiveHUD.SetActive(false);
+			if (SetValue[1])
+			{
+				InteractiveDesignHUD.SetActive(false);
+			}
 		}
 
-		if (collision.CompareTag("Dev"))
+		if (collision.CompareTag("Development"))
 		{
-			InteractiveHUD.SetActive(false);
+			if (SetValue[2])
+			{
+				InteractiveDevHUD.SetActive(false);
+			}
 		}
+
 	}
 
-	private void SetText(string option1, string option2, string option3)
+	public void SetArt1()
 	{
-		Option1Text.text = option1;
-		Option2Text.text = option2;
-		Option3Text.text = option3;
+		sprtrndr.sprite = ArtistImages[0];
+		SetValue[0] = false;
 	}
+
+	public void SetArt2()
+	{
+		sprtrndr.sprite = ArtistImages[1];
+		SetValue[0] = false;
+	}
+
+	public void SetArt3()
+	{
+		sprtrndr.sprite = ArtistImages[2];
+		SetValue[0] = false;
+	}
+
+	public void SetDesign1()
+	{
+		SetValue[1] = false;
+	}
+
+	public void SetDesign2()
+	{
+		SetValue[1] = false;
+	}
+
+	public void SetDesign3()
+	{
+		SetValue[1] = false;
+	}
+
+	public void SetDev1()
+	{
+		SetValue[2] = false;
+	}
+
+	public void SetDev2()
+	{
+		SetValue[2] = false;
+	}
+
+	public void SetDev3()
+	{
+		SetValue[2] = false;
+	}
+
+
 }

@@ -9,6 +9,7 @@ TagManager:
   - Artist
   - Designer
   - Dev
+  - wall
   layers:
   - Default
   - TransparentFX

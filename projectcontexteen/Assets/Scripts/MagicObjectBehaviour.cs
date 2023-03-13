@@ -28,57 +28,58 @@ public class MagicObjectBehaviour : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Artist"))
+		if (collision.CompareTag("Player"))
 		{
-			if (SetValue[0])
+			if (collision.gameObject.name == "Artist")
 			{
-				InteractiveArtHUD.SetActive(true);
-			}
-		}
-
-		if (collision.CompareTag("Design"))
-		{
-			if (SetValue[1])
+				if (SetValue[0])
+				{
+					InteractiveArtHUD.SetActive(true);
+				}
+			} else if (collision.gameObject.name == "Designer")
 			{
-				InteractiveDesignHUD.SetActive(true);
-			}
-		}
-
-		if (collision.CompareTag("Development"))
-		{
-			if (SetValue[2])
+				if (SetValue[1])
+				{
+					InteractiveDesignHUD.SetActive(true);
+				}
+			} else if (collision.gameObject.name == "Dev")
 			{
-				InteractiveDevHUD.SetActive(true);
-			}
+				if (SetValue[2])
+				{
+					InteractiveDevHUD.SetActive(true);
+				}
+			} 
 		}
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Artist"))
+		if (collision.CompareTag("Player"))
 		{
-			if (SetValue[0])
+			if (collision.gameObject.name == "Artist")
 			{
-				InteractiveArtHUD.SetActive(false);
+				if (SetValue[0])
+				{
+					InteractiveArtHUD.SetActive(false);
+				}
+			}
+			else if (collision.gameObject.name == "Designer")
+			{
+				if (SetValue[1])
+				{
+					InteractiveDesignHUD.SetActive(false);
+				}
+			}
+			else if (collision.gameObject.name == "Dev")
+			{
+				if (SetValue[2])
+				{
+					InteractiveDevHUD.SetActive(false);
+				}
 			}
 		}
 
-		if (collision.CompareTag("Design"))
-		{
-			if (SetValue[1])
-			{
-				InteractiveDesignHUD.SetActive(false);
-			}
-		}
-
-		if (collision.CompareTag("Development"))
-		{
-			if (SetValue[2])
-			{
-				InteractiveDevHUD.SetActive(false);
-			}
-		}
-
+		Debug.Log(collision.gameObject.name);
 	}
 
 	public void SetArt1()

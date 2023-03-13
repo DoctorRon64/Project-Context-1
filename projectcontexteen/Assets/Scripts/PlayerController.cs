@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,39 +8,42 @@ public class PlayerController : MonoBehaviour
     public float JumpHeight;
     public float OverlapSphere;
 
+    public float horizontalInput;
+
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private LayerMask layerMask;
 
-    private Vector2 movementInput;
-    [SerializeField]
-    private bool jumped = false;
+    public string MoveInput;
+	public KeyCode UpInput;
+    public bool jumped = false;
 
-    void Awake()
+	void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
-    {
-        rb2d.velocity = new Vector2(movementInput.x * Speed, rb2d.velocity.y);
+	private void Update()
+	{
+        horizontalInput = Input.GetAxisRaw(MoveInput);
+        if (Input.GetKey(UpInput))
+		{
+            jumped = true;
+		} else
+		{
+            jumped = false;
+		}
+    }
 
-        if (jumped)
-        {
+	void FixedUpdate()
+    {
+        if (jumped && IsGrounded())
+		{
             rb2d.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
         }
-    }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        movementInput = context.ReadValue<Vector2>();
+        rb2d.velocity = new Vector2(horizontalInput * Speed, rb2d.velocity.y);
     }
-
-    public void OnJump(InputAction.CallbackContext context)
-	{
-        jumped = context.ReadValue<bool>();
-        //jumped = context.action.triggered;
-	}
 
 	private bool IsGrounded()
 	{

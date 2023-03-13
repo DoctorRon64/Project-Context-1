@@ -523,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408889869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.24, y: -2.46, z: 0}
+  m_LocalPosition: {x: 0, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3618,14 +3618,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e282645e3afa4f4ea190918fe7ce3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
-  JumpHeight: 1
-  OverlapSphere: 0
+  Speed: 6.42
+  JumpHeight: 3
+  OverlapSphere: 0.5
   groundCheck: {fileID: 408889870}
-  rb2d: {fileID: 0}
+  rb2d: {fileID: 8698030612732781908}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  jumped: 0
 --- !u!4 &5625247165929727188
 Transform:
   m_ObjectHideFlags: 0
@@ -3704,9 +3705,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5625247165929727188}
   - component: {fileID: 6330813430835365779}
+  - component: {fileID: 8698030612732781908}
+  - component: {fileID: 8698030612732781909}
   - component: {fileID: 3524628737163571235}
   - component: {fileID: 8698030612732781907}
-  - component: {fileID: 8698030612732781908}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -3771,8 +3773,8 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d5c2c9bf-a944-4e36-8a67-847408159f4f
     m_ActionName: Player/Jump[/Keyboard/w,/Keyboard/upArrow]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard1
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -3792,8 +3794,34 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0083c4eae5e579746a15c40b5e8578f3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &8698030612732781909
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8698030612732781906}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.53950214, y: -0.9856863}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.04, y: 13.41}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.960997, y: 11.065359}
+  m_EdgeRadius: 0

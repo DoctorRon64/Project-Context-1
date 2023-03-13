@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     private Vector2 movementInput;
+    [SerializeField]
     private bool jumped = false;
 
     void Awake()
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2d.velocity = new Vector2(movementInput.x * Speed, rb2d.velocity.y);
 
-        if (jumped && IsGrounded())
+        if (jumped)
         {
             rb2d.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
         }
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
 	{
         jumped = context.ReadValue<bool>();
-        jumped = context.action.triggered;
+        //jumped = context.action.triggered;
 	}
 
 	private bool IsGrounded()

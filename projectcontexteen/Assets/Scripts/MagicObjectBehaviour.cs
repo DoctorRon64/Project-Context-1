@@ -32,19 +32,19 @@ public class MagicObjectBehaviour : MonoBehaviour
 		{
 			if (collision.gameObject.name == "Artist")
 			{
-				if (SetValue[0])
+				if (!SetValue[0])
 				{
 					InteractiveArtHUD.SetActive(true);
 				}
 			} else if (collision.gameObject.name == "Designer")
 			{
-				if (SetValue[1])
+				if (!SetValue[1])
 				{
 					InteractiveDesignHUD.SetActive(true);
 				}
 			} else if (collision.gameObject.name == "Dev")
 			{
-				if (SetValue[2])
+				if (!SetValue[2])
 				{
 					InteractiveDevHUD.SetActive(true);
 				}
@@ -58,21 +58,21 @@ public class MagicObjectBehaviour : MonoBehaviour
 		{
 			if (collision.gameObject.name == "Artist")
 			{
-				if (SetValue[0])
+				if (!SetValue[0])
 				{
 					InteractiveArtHUD.SetActive(false);
 				}
 			}
 			else if (collision.gameObject.name == "Designer")
 			{
-				if (SetValue[1])
+				if (!SetValue[1])
 				{
 					InteractiveDesignHUD.SetActive(false);
 				}
 			}
 			else if (collision.gameObject.name == "Dev")
 			{
-				if (SetValue[2])
+				if (!SetValue[2])
 				{
 					InteractiveDevHUD.SetActive(false);
 				}

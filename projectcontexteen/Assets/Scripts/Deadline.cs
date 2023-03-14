@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Deadline : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class Deadline : MonoBehaviour
     public float maxTime = 100;
 
     public TextMeshProUGUI deadlineTimerText;
+    public Slider progressBar;
 
     // Start is called before the first frame update
     void Start()
     {
         currentTime = maxTime;
+        progressBar.maxValue = maxTime;
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class Deadline : MonoBehaviour
     void DisplayTimeOnScreen() // Show the current time on the screen
     {
         deadlineTimerText.text = currentTime.ToString("F1");
+        progressBar.value = currentTime;
     }
 
 

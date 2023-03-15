@@ -7,6 +7,7 @@ public class FlyAroundInCircles : MonoBehaviour
     public flyindexitem[] IndexToMoveTo = new flyindexitem[4];
     public int FlyIndex = 0;
 	public int cooldown = 1;
+	public int speed = 5;
 
 	// Update is called once per frame
 	private void Start()
@@ -18,7 +19,7 @@ public class FlyAroundInCircles : MonoBehaviour
 
 	private void Update()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, IndexToMoveTo[FlyIndex].transform.position, Mathf.Infinity);
+		transform.position = Vector2.MoveTowards(transform.position, IndexToMoveTo[FlyIndex].transform.position, Time.deltaTime * speed);
 	}
 
 	private void FlyAroundInCirclesCallon()

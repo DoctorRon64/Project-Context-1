@@ -1,133 +1,111 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Collections;
 using UnityEngine.UI;
-using TMPro;
 
 public class MagicObjectBehaviour : MonoBehaviour
 {
-	public GameObject InteractiveArtHUD;
-	public GameObject InteractiveDesignHUD;
-	public GameObject InteractiveDevHUD;
+	public int ArtValues;
+	public int DesignValues;
+	public int DevValues;
 
-	public bool[] SetValue = new bool[3];
+	public MagicObject magicobjecto;
+	public Button[] ClickableArtButtons;
+	public Button[] ClickableDesButtons;
+	public Button[] ClickableDevButtons;
 
+	public GameObject[] ArtistObject;
+	public GameObject InstantObj;
+	private BoxCollider2D boxcol;
 
-	public SpriteRenderer sprtrndr;
-	public Sprite[] ArtistImages;
-
-	
-
-	private void Start()
+	private void Awake()
 	{
-		InteractiveArtHUD.SetActive(false);
-		InteractiveDesignHUD.SetActive(false);
-		InteractiveDevHUD.SetActive(false);
+		magicobjecto = GetComponent<MagicObject>();
+		boxcol = GetComponent<BoxCollider2D>();
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	//check stuff
+	public void SetArt(int _parameter)
 	{
-		if (collision.CompareTag("Player"))
+		ArtValues = _parameter;
+
+		for (int i = 0; i < ClickableArtButtons.Length; i++)
 		{
-			if (collision.gameObject.name == "Artist")
-			{
-				if (!SetValue[0])
-				{
-					InteractiveArtHUD.SetActive(true);
-				}
-			} else if (collision.gameObject.name == "Designer")
-			{
-				if (!SetValue[1])
-				{
-					InteractiveDesignHUD.SetActive(true);
-				}
-			} else if (collision.gameObject.name == "Dev")
-			{
-				if (!SetValue[2])
-				{
-					InteractiveDevHUD.SetActive(true);
-				}
-			} 
+			ClickableArtButtons[i].interactable = false;
+		}
+
+		CheckifAllTrue();
+	}
+
+	public void SetDesign(int _parameter)
+	{
+		DesignValues = _parameter;
+
+		for (int i = 0; i < ClickableDesButtons.Length; i++)
+		{
+			ClickableDesButtons[i].interactable = false;
+		}
+
+		CheckifAllTrue();
+	}
+
+	public void SetDev(int _parameter)
+	{
+		DevValues = _parameter;
+
+		for (int i = 0; i < ClickableDevButtons.Length; i++)
+		{
+			ClickableDevButtons[i].interactable = false;
+		}
+
+		CheckifAllTrue();
+	}
+
+	private void CheckifAllTrue()
+	{
+		if (ArtValues != 0 && DesignValues != 0 && DevValues != 0)
+		{
+			Artify();
+			Designefy();
+			Devify();
 		}
 	}
 
-	private void OnTriggerExit2D(Collider2D collision)
+
+	//art stuff
+	private void Artify()
 	{
-		if (collision.CompareTag("Player"))
+		InstantObj = Instantiate(ArtistObject[ArtValues - 1], gameObject.transform.position, Quaternion.identity);
+		InstantObj.transform.parent = gameObject.transform;
+
+		boxcol.enabled = false;
+		gameObject.GetComponent<SpriteRenderer>().enabled = false;
+	}
+
+
+	//design stuff
+	private void Designefy()
+	{
+		switch (DesignValues)
 		{
-			if (collision.gameObject.name == "Artist")
-			{
-				if (!SetValue[0])
-				{
-					InteractiveArtHUD.SetActive(false);
-				}
-			}
-			else if (collision.gameObject.name == "Designer")
-			{
-				if (!SetValue[1])
-				{
-					InteractiveDesignHUD.SetActive(false);
-				}
-			}
-			else if (collision.gameObject.name == "Dev")
-			{
-				if (!SetValue[2])
-				{
-					InteractiveDevHUD.SetActive(false);
-				}
-			}
+			case 1: FlyAroundInCirclesfunc(); break;
+			case 2: GrowAndShrink(); break;
 		}
-
-		Debug.Log(collision.gameObject.name);
 	}
 
-	public void SetArt1()
+	private void FlyAroundInCirclesfunc()
 	{
-		sprtrndr.sprite = ArtistImages[0];
-		SetValue[0] = false;
+		InstantObj.AddComponent<FlyAroundInCircles>();
 	}
 
-	public void SetArt2()
+	private void GrowAndShrink()
 	{
-		sprtrndr.sprite = ArtistImages[1];
-		SetValue[0] = false;
+		InstantObj.AddComponent<GrowAndShrink>();
 	}
 
-	public void SetArt3()
+	private void Devify()
 	{
-		sprtrndr.sprite = ArtistImages[2];
-		SetValue[0] = false;
-	}
 
-	public void SetDesign1()
-	{
-		SetValue[1] = false;
-	}
-
-	public void SetDesign2()
-	{
-		SetValue[1] = false;
-	}
-
-	public void SetDesign3()
-	{
-		SetValue[1] = false;
-	}
-
-	public void SetDev1()
-	{
-		SetValue[2] = false;
-	}
-
-	public void SetDev2()
-	{
-		SetValue[2] = false;
-	}
-
-	public void SetDev3()
-	{
-		SetValue[2] = false;
 	}
 
 

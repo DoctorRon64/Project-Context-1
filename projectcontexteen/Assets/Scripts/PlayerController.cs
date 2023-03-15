@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour
     public float JumpHeight;
     public float OverlapSphere;
 
-    public float horizontalInput;
+    public Animator anim;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private LayerMask layerMask;
 
+    public float horizontalInput;
     public string MoveInput;
 	public KeyCode UpInput;
     public bool jumped = false;

@@ -115,12 +115,12 @@ public class MagicObjectBehaviour : MonoBehaviour
 
 	private void ActivateOnTouch()
 	{
-
+		InstantObj.AddComponent<ActivateOnTouch>();
 	}
 
 	private void ActivateOnNotTouch()
 	{
-
+		InstantObj.AddComponent<ActivateWhenNOTouch>();
 	}
 
 

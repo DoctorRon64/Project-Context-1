@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class MagicObjectBehaviour : MonoBehaviour
 {
 	public int ArtValues;
@@ -71,7 +72,6 @@ public class MagicObjectBehaviour : MonoBehaviour
 		}
 	}
 
-
 	//art stuff
 	private void Artify()
 	{
@@ -103,7 +103,22 @@ public class MagicObjectBehaviour : MonoBehaviour
 		InstantObj.AddComponent<GrowAndShrink>();
 	}
 
+	//Dev Stuff
 	private void Devify()
+	{
+		switch (DevValues) 
+		{
+			case 1 : ActivateOnTouch(); break;
+            case 2 : ActivateOnNotTouch(); break;
+		}
+	}
+
+	private void ActivateOnTouch()
+	{
+
+	}
+
+	private void ActivateOnNotTouch()
 	{
 
 	}

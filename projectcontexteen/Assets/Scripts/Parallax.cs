@@ -9,7 +9,7 @@ public class Parallax : MonoBehaviour
     public float parallaxEffect;
     public float speed;
 
-    void Start()
+    void Awake()
     {
         startpos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;

@@ -22,7 +22,7 @@ public class MultipeleTargets : MonoBehaviour
 		cam = GetComponent<Camera>();
 	}
 
-	void LateUpdate()
+	void FixedUpdate()
 	{
 		if (targets.Count == 0)
 			return;

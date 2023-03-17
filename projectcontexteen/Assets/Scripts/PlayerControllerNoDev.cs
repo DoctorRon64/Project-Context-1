@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerNoDev : MonoBehaviour
 {
     public float Speed;
     public float JumpHeight;
@@ -25,16 +25,17 @@ public class PlayerController : MonoBehaviour
 
 	void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();  
     }
 
 	private void Update()
 	{
+        velocite = rb2d.velocity.y;
+
         Idle();
         Walking();
         Jumping();
         CasionControls();
-        velocite = rb2d.velocity.y;
     }
 
     void FixedUpdate()
@@ -50,28 +51,26 @@ public class PlayerController : MonoBehaviour
 	{
         if (jumped == false && horizontalInput == 0 && velocite == 0)
         {
-            SetLayerWeights(1, 0, 0);
-
+            SetLayerWeights(1, 0);
             anim.SetBool("Walking", false);
         }
     }
 
     void Walking()
 	{
-        horizontalInput = Input.GetAxisRaw(MoveInput);
+        horizontalInput = Input.GetAxisRaw(MoveInput); 
 
         if (horizontalInput > 0)
-        {
+		{
             sprtRndr.flipX = false;
-        }
-        else if (horizontalInput < 0)
-        {
+		} else if (horizontalInput < 0)
+		{
             sprtRndr.flipX = true;
-        }
+		}
 
         if (horizontalInput > 0 || horizontalInput < 0)
         {
-            SetLayerWeights(0, 1, 0);
+            SetLayerWeights(1, 0);
             anim.SetBool("Walking", true);
         } 
     }
@@ -100,20 +99,22 @@ public class PlayerController : MonoBehaviour
 
     private void AnimationControls()
 	{
+        
         if (rb2d.velocity.y > 0.1)
-        {
-            SetLayerWeights(0, 0, 1);
+		{
+            SetLayerWeights(0, 1);
             anim.SetBool("GoingUp", true);
             anim.SetBool("Airborne", false);
         }
         else if (rb2d.velocity.y < -0.99)
-        {
-            SetLayerWeights(0, 0, 1);
+		{
+            SetLayerWeights(0, 1);
             anim.SetBool("GoingUp", false);
             anim.SetBool("Airborne", true);
-        } else if (rb2d.velocity.y == 0)
+        }
+        else if (rb2d.velocity.y == 0)
 		{
-            SetLayerWeights(1, 0, 0);
+            SetLayerWeights(1, 0);
             anim.SetBool("GoingUp", false);
             anim.SetBool("Airborne", false);
         }
@@ -126,11 +127,10 @@ public class PlayerController : MonoBehaviour
         anim.SetInteger("Casino", Casino);
     }
 
-    public void SetLayerWeights(int _layer1, int _layer2, int _layer3)
+    public void SetLayerWeights(int _layer1, int _layer2)
 	{
         anim.SetLayerWeight(0, _layer1);
         anim.SetLayerWeight(1, _layer2);
-        anim.SetLayerWeight(2, _layer3);
     }
 }
 

@@ -43,7 +43,7 @@ public class Deadline : MonoBehaviour
 
     void DeadlineHit() // Call function when time has hit 0
     {
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("4.GameOver");
     }
 
     void DisplayTimeOnScreen() // Show the current time on the screen

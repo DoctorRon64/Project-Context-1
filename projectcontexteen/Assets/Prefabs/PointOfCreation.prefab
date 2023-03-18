@@ -317,6 +317,7 @@ MonoBehaviour:
   - {fileID: 2960009483896144392, guid: a2c39feb9f10d3543b7239cd197f11d0, type: 3}
   - {fileID: 2993030615296366551, guid: 17ed506c6c375e0439e68e1a4cc965db, type: 3}
   InstantObj: {fileID: 0}
+  SpriteStuff: {fileID: 4384261422239966769}
 --- !u!1 &2114071554235727399
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,49 +18,62 @@ public class MagicObjectBehaviour : MonoBehaviour
 	public GameObject[] ArtistObject;
 	public GameObject InstantObj;
 	private BoxCollider2D boxcol;
+	public GameObject SpriteStuff;
+
+	[SerializeField]
+	private bool PlayerInRange = false;
 
 	private void Awake()
 	{
 		magicobjecto = GetComponent<MagicObject>();
 		boxcol = GetComponent<BoxCollider2D>();
-		magicobjecto = GetComponent<MagicObject>();
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+		{
+			PlayerInRange = true;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+		{
+			PlayerInRange = false;
+		}
 	}
 
 	//check stuff
 	public void SetArt(int _parameter)
 	{
-		ArtValues = _parameter;
-
-		for (int i = 0; i < ClickableArtButtons.Length; i++)
+		if (PlayerInRange)
 		{
-			ClickableArtButtons[i].interactable = false;
-		}
+			ArtValues = _parameter;
 
-		CheckifAllTrue();
+			CheckifAllTrue();
+		}
 	}
 
 	public void SetDesign(int _parameter)
 	{
-		DesignValues = _parameter;
-
-		for (int i = 0; i < ClickableDesButtons.Length; i++)
+		if (PlayerInRange)
 		{
-			ClickableDesButtons[i].interactable = false;
-		}
+			DesignValues = _parameter;
 
-		CheckifAllTrue();
+			CheckifAllTrue();
+		}
 	}
 
 	public void SetDev(int _parameter)
 	{
-		DevValues = _parameter;
-
-		for (int i = 0; i < ClickableDevButtons.Length; i++)
+		if (PlayerInRange)
 		{
-			ClickableDevButtons[i].interactable = false;
-		}
+			DevValues = _parameter;
 
-		CheckifAllTrue();
+			CheckifAllTrue();
+		}
 	}
 
 	private void CheckifAllTrue()
@@ -80,7 +93,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 		InstantObj.transform.parent = gameObject.transform;
 
 		boxcol.enabled = false;
-		gameObject.GetComponent<SpriteRenderer>().enabled = false;
+		SpriteStuff.SetActive(false);
 	}
 
 

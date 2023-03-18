@@ -23,6 +23,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 	{
 		magicobjecto = GetComponent<MagicObject>();
 		boxcol = GetComponent<BoxCollider2D>();
+		magicobjecto = GetComponent<MagicObject>();
 	}
 
 	//check stuff

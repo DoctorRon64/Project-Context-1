@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  maxTime: 100
+  maxTime: 110
   deadlineTimerText: {fileID: 0}
   progressBar: {fileID: 0}

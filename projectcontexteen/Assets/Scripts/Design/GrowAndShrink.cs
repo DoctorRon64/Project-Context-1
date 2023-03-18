@@ -12,7 +12,7 @@ public class GrowAndShrink : MonoBehaviour
     IEnumerator ScaleOverTime(float time)
     {
         Vector3 originalScale = gameObject.transform.localScale;
-        Vector3 destinationScale = originalScale * 1.5f; // Scale the object to 150% of its original size
+        Vector3 destinationScale = originalScale * 5.5f; // Scale the object to 150% of its original size
         float currentTime = 0.0f;
 
         while (currentTime <= time)

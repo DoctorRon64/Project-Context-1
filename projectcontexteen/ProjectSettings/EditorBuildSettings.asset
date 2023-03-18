@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/3.RickLayoutTests.unity
     guid: dd2ee0e29a76fbe489c16045b29d551e
   - enabled: 1
-    path: Assets/Scenes/4.GameOver.unity
-    guid: 955fbaabe0b990942871ccfb4f099704
-  - enabled: 1
     path: Assets/Scenes/5.VictoryScreen.unity
     guid: 580747d04ba827840a67ca0499716ae3
+  - enabled: 1
+    path: Assets/Scenes/4.GameOver.unity
+    guid: 955fbaabe0b990942871ccfb4f099704
   m_configObjects: {}

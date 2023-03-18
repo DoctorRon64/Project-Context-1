@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7575321117120374263}
   - component: {fileID: 4288310177083978604}
   - component: {fileID: 6455202341151521932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Poppetje
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1759,6 +1759,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveArtHUD
+      value: 
+      objectReference: {fileID: 555950547}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDevHUD
+      value: 
+      objectReference: {fileID: 542392274}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDesignHUD
+      value: 
+      objectReference: {fileID: 841108803}
     - target: {fileID: 2114071554141571576, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2359,6 +2371,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveArtHUD
+      value: 
+      objectReference: {fileID: 555950547}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDevHUD
+      value: 
+      objectReference: {fileID: 542392274}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDesignHUD
+      value: 
+      objectReference: {fileID: 841108803}
     - target: {fileID: 2114071554141571576, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3810,6 +3834,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveArtHUD
+      value: 
+      objectReference: {fileID: 555950547}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDevHUD
+      value: 
+      objectReference: {fileID: 542392274}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDesignHUD
+      value: 
+      objectReference: {fileID: 841108803}
     - target: {fileID: 2114071554141571576, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -84761,6 +84797,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveArtHUD
+      value: 
+      objectReference: {fileID: 555950547}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDevHUD
+      value: 
+      objectReference: {fileID: 542392274}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDesignHUD
+      value: 
+      objectReference: {fileID: 841108803}
     - target: {fileID: 2114071554141571576, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -85055,6 +85103,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveArtHUD
+      value: 
+      objectReference: {fileID: 555950547}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDevHUD
+      value: 
+      objectReference: {fileID: 542392274}
+    - target: {fileID: 952734456081466428, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: InteractiveDesignHUD
+      value: 
+      objectReference: {fileID: 841108803}
     - target: {fileID: 2114071554141571576, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: m_RootOrder
       value: 13

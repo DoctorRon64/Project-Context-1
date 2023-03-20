@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
 	{
 		rb2d.velocity = new Vector2(horizontalInput * Speed, rb2d.velocity.y);
-        if (jumped && IsGrounded())
+
+        if (Input.GetKey(UpInput) && IsGrounded())
         {
             rb2d.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
         }
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     void Idle()
 	{
-        if (jumped == false && horizontalInput == 0 && velocite == 0)
+        if (!Input.GetKey(UpInput) && horizontalInput == 0 && velocite == 0)
         {
             SetLayerWeights(1, 0, 0);
 
@@ -78,14 +79,6 @@ public class PlayerController : MonoBehaviour
 
     void Jumping()
 	{
-        if (Input.GetKey(UpInput)) 
-        { 
-            jumped = true;
-        } 
-        else 
-        { 
-            jumped = false;
-        }
 
         if (velocite != 0)
 		{
@@ -121,8 +114,7 @@ public class PlayerController : MonoBehaviour
 
     private void CasionControls()
 	{
-        Casino = 1;
-        Casino = 0;
+        Casino = Random.Range(0, 1);
         anim.SetInteger("Casino", Casino);
     }
 

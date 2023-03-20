@@ -4,36 +4,25 @@ using UnityEngine;
 
 public class GrowAndShrink : MonoBehaviour
 {
-    private void Start()
+    public float scaleFactor = 0.1f;
+    public float maxScale = 12f;
+    public float minScale = 10f;
+    public float scaleSpeed = 3f;
+    public bool STOP = false;
+
+    private Vector3 originalScale;
+
+    void Start()
     {
-        StartCoroutine(ScaleOverTime(2.0f));
+        originalScale = transform.localScale;
     }
 
-    IEnumerator ScaleOverTime(float time)
+    void Update()
     {
-        Vector3 originalScale = gameObject.transform.localScale;
-        Vector3 destinationScale = originalScale * 5.5f; // Scale the object to 150% of its original size
-        float currentTime = 0.0f;
-
-        while (currentTime <= time)
+        if (!STOP)
         {
-            gameObject.transform.localScale = Vector3.Lerp(originalScale, destinationScale, currentTime / time);
-            currentTime += Time.deltaTime;
-            yield return null;
+            float newScale = Mathf.PingPong(Time.time * scaleSpeed, maxScale - minScale) + minScale;
+            transform.localScale = originalScale * newScale * scaleFactor;
         }
-
-        yield return new WaitForSeconds(0.1f); // Wait for half a second
-        currentTime = 0.0f;
-
-        while (currentTime <= time)
-        {
-            gameObject.transform.localScale = Vector3.Lerp(destinationScale, originalScale, currentTime / time);
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
-
-        gameObject.transform.localScale = originalScale; // Set the object back to its original size
-
-        StartCoroutine(ScaleOverTime(1.0f));
     }
 }

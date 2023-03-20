@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2114071553402906720}
   - component: {fileID: 2114071553402906722}
   - component: {fileID: 2114071553402906723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GridPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114071553901520504}
   - component: {fileID: 2114071553901520507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuestionMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,10 +199,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2114071554141571576}
   - component: {fileID: 36814792848788402}
-  - component: {fileID: 3902427975834336821}
-  - component: {fileID: 8891290219818686301}
   - component: {fileID: 4341952826898657788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PointOfCreation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,6 +224,7 @@ Transform:
   - {fileID: 2155396422480160110}
   - {fileID: 2155396421819185245}
   - {fileID: 5964749738434855997}
+  - {fileID: 5668167724887426033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,7 +237,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2114071554141571577}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0083c4eae5e579746a15c40b5e8578f3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -255,37 +254,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1363912, y: 2.9821572}
   m_EdgeRadius: 0
---- !u!58 &3902427975834336821
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114071554141571577}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2
---- !u!114 &8891290219818686301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114071554141571577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e421ea2a1cc690247a1307de9d48fd4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractiveArtHUD: {fileID: 2295607706553034872, guid: 08cb7ce6fece4994eb60736e7e5b7819, type: 3}
-  InteractiveDesignHUD: {fileID: 0}
-  InteractiveDevHUD: {fileID: 0}
 --- !u!114 &4341952826898657788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +286,6 @@ MonoBehaviour:
   - {fileID: 2993030615296366551, guid: 17ed506c6c375e0439e68e1a4cc965db, type: 3}
   InstantObj: {fileID: 0}
   SpriteStuff: {fileID: 4384261422239966769}
-  PlayerInRange: 0
 --- !u!1 &2114071554235727399
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114071554235727398}
   - component: {fileID: 2114071554235727401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114071554276025688}
   - component: {fileID: 2114071554276025691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2114071554277928524}
   - component: {fileID: 2114071554277928527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155396421819185245}
   - component: {fileID: 2155396421819185246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flyindex (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2155396421819185244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.036528, y: 2.435184, z: -0.9459152}
+  m_LocalPosition: {x: -2, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -626,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155396422480160110}
   - component: {fileID: 2155396422480160111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flyindex (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2155396422480160109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.218529, y: -0.16300356, z: -0.9459152}
+  m_LocalPosition: {x: 0, y: -2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -670,7 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155396422615311289}
   - component: {fileID: 2155396422615311290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flyindex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2155396422615311288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.49, y: 8.050001, z: -0.9459152}
+  m_LocalPosition: {x: 0, y: 2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -714,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155396422782568596}
   - component: {fileID: 2155396422782568597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flyindex (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2155396422782568603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.570883, y: 2.278468, z: -0.9459152}
+  m_LocalPosition: {x: 2, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,7 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5964749738434855997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spritestuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,3 +749,68 @@ Transform:
   m_Father: {fileID: 2114071554141571576}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8855970688537496313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5668167724887426033}
+  - component: {fileID: 9121671304791094480}
+  - component: {fileID: 952734456081466428}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5668167724887426033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855970688537496313}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00000011920929, y: -0.015000105, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2114071554141571576}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &9121671304791094480
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855970688537496313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
+--- !u!114 &952734456081466428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855970688537496313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e421ea2a1cc690247a1307de9d48fd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractiveArtHUD: {fileID: 0}
+  InteractiveDesignHUD: {fileID: 0}
+  InteractiveDevHUD: {fileID: 0}
+  PlayerInRange: 0

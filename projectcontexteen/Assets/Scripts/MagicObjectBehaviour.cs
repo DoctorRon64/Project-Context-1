@@ -20,29 +20,17 @@ public class MagicObjectBehaviour : MonoBehaviour
 	private BoxCollider2D boxcol;
 	public GameObject SpriteStuff;
 
-	[SerializeField]
-	private bool PlayerInRange = false;
+	private bool PlayerInRange;
 
 	private void Awake()
 	{
-		magicobjecto = GetComponent<MagicObject>();
+		magicobjecto = GetComponentInChildren<MagicObject>();
 		boxcol = GetComponent<BoxCollider2D>();
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void Update()
 	{
-		if (collision.CompareTag("Player"))
-		{
-			PlayerInRange = true;
-		}
-	}
-
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.CompareTag("Player"))
-		{
-			PlayerInRange = false;
-		}
+		PlayerInRange = magicobjecto.PlayerInRange;
 	}
 
 	//check stuff
@@ -96,46 +84,16 @@ public class MagicObjectBehaviour : MonoBehaviour
 		SpriteStuff.SetActive(false);
 	}
 
-
 	//design stuff
 	private void Designefy()
 	{
-		switch (DesignValues)
-		{
-			case 1: FlyAroundInCirclesfunc(); break;
-			case 2: GrowAndShrink(); break;
-		}
-	}
-
-	private void FlyAroundInCirclesfunc()
-	{
 		InstantObj.AddComponent<FlyAroundInCircles>();
-	}
-
-	private void GrowAndShrink()
-	{
 		InstantObj.AddComponent<GrowAndShrink>();
 	}
 
 	//Dev Stuff
 	private void Devify()
 	{
-		switch (DevValues) 
-		{
-			case 1 : ActivateOnTouch(); break;
-            case 2 : ActivateOnNotTouch(); break;
-		}
-	}
-
-	private void ActivateOnTouch()
-	{
 		InstantObj.AddComponent<ActivateOnTouch>();
 	}
-
-	private void ActivateOnNotTouch()
-	{
-		InstantObj.AddComponent<ActivateWhenNOTouch>();
-	}
-
-
 }

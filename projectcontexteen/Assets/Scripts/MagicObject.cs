@@ -10,6 +10,8 @@ public class MagicObject : MonoBehaviour
 	public GameObject InteractiveArtHUD;
 	public GameObject InteractiveDesignHUD;
 	public GameObject InteractiveDevHUD;
+	
+	public bool PlayerInRange = false;
 
 	private void Start()
 	{
@@ -18,10 +20,11 @@ public class MagicObject : MonoBehaviour
 		InteractiveDevHUD.SetActive(false);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Player"))
 		{
+			PlayerInRange = true;
 			if (collision.gameObject.name == "Artist")
 			{
 				InteractiveArtHUD.SetActive(true);
@@ -37,6 +40,7 @@ public class MagicObject : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
+		PlayerInRange = false;
 		if (collision.CompareTag("Player"))
 		{
 			if (collision.gameObject.name == "Artist")

@@ -35,7 +35,6 @@ public class PlayerControllerNoDev : MonoBehaviour
         Idle();
         Walking();
         Jumping();
-        CasionControls();
     }
 
     void FixedUpdate()
@@ -118,13 +117,6 @@ public class PlayerControllerNoDev : MonoBehaviour
             anim.SetBool("GoingUp", false);
             anim.SetBool("Airborne", false);
         }
-    }
-
-    private void CasionControls()
-	{
-        Casino = 1;
-        Casino = 0;
-        anim.SetInteger("Casino", Casino);
     }
 
     public void SetLayerWeights(int _layer1, int _layer2)

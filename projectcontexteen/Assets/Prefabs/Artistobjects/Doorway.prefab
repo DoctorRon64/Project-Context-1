@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7729885474366885489}
   - component: {fileID: 4962747950276801880}
   - component: {fileID: 6168010068015699006}
-  - component: {fileID: 1026339313082621824}
   m_Layer: 6
   m_Name: Doorway
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4894066079619724159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.53, y: 1.6224, z: 0}
-  m_LocalScale: {x: 1, y: 1.1145, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,19 +111,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8119206, y: 7.4998865}
   m_EdgeRadius: 0
---- !u!58 &1026339313082621824
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4894066079619724159}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4.929495

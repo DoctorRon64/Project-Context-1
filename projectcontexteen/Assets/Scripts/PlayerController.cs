@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 	public KeyCode UpInput;
 
 	public bool jumped = false;
-    private int Casino;
+    public int Casino;
     public float velocite;
 
 	void Awake()
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
     private void CasionControls()
 	{
-        Casino = Random.Range(0, 1);
+        Casino = Random.Range(0, 2);
         anim.SetInteger("Casino", Casino);
     }
 

@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e282645e3afa4f4ea190918fe7ce3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 8
-  JumpHeight: 2
-  OverlapSphere: 0.3
+  Speed: 16
+  JumpHeight: 22
+  OverlapSphere: 0.01
+  FallSpeed: 30
   anim: {fileID: 2958165324817885367}
   sprtRndr: {fileID: 2958165324817885366}
   groundCheck: {fileID: 2958165326121564743}
@@ -109,6 +110,7 @@ MonoBehaviour:
   MoveInput: Horizontal1
   UpInput: 119
   jumped: 0
+  Casino: 0
   velocite: 0
 --- !u!1 &2958165324817885364
 GameObject:

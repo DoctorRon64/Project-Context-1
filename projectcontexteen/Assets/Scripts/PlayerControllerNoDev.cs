@@ -7,6 +7,7 @@ public class PlayerControllerNoDev : MonoBehaviour
     public float Speed;
     public float JumpHeight;
     public float OverlapSphere;
+    public float FallSpeed;
 
     public Animator anim;
     public SpriteRenderer sprtRndr;
@@ -110,6 +111,7 @@ public class PlayerControllerNoDev : MonoBehaviour
             SetLayerWeights(0, 1);
             anim.SetBool("GoingUp", false);
             anim.SetBool("Airborne", true);
+            rb2d.AddForce(Vector2.down * FallSpeed);
         }
         else if (rb2d.velocity.y == 0)
 		{

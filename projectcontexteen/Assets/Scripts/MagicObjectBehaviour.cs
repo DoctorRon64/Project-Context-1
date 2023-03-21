@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 	public GameObject SpriteStuff;
 
 	private bool PlayerInRange;
+	[SerializeField] private bool MagicUsed = false;
 
 	private void Awake()
 	{
@@ -36,7 +38,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 	//check stuff
 	public void SetArt(int _parameter)
 	{
-		if (PlayerInRange)
+		if (PlayerInRange && !MagicUsed)
 		{
 			ArtValues = _parameter;
 
@@ -46,7 +48,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 
 	public void SetDesign(int _parameter)
 	{
-		if (PlayerInRange)
+		if (PlayerInRange && !MagicUsed)
 		{
 			DesignValues = _parameter;
 
@@ -56,7 +58,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 
 	public void SetDev(int _parameter)
 	{
-		if (PlayerInRange)
+		if (PlayerInRange && !MagicUsed)
 		{
 			DevValues = _parameter;
 
@@ -66,12 +68,16 @@ public class MagicObjectBehaviour : MonoBehaviour
 
 	private void CheckifAllTrue()
 	{
-		if (ArtValues != 0 && DesignValues != 0 && DevValues != 0)
+		if (!MagicUsed)
 		{
-			Artify();
-			Designefy();
-			Devify();
-		}
+            if (ArtValues != 0 && DesignValues != 0 && DevValues != 0)
+            {
+                Artify();
+                Designefy();
+                Devify();
+				MagicUsed = true;
+            }
+        }
 	}
 
 	//art stuff

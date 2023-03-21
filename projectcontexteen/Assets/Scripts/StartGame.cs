@@ -18,6 +18,19 @@ public class StartGame : MonoBehaviour
         {
             StartTheGame();
         }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("E Key pressed");
+        }
+        if (Input.GetKey("joystick button 0"))
+        {
+            Debug.Log("A Button pressed");
+        }
+        if (Input.GetKey("[/]"))
+        {
+            Debug.Log("Numpad / pressed");
+        }
     }
 
     void StartTheGame()

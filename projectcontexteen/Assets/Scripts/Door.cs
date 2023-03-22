@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
 
     public int playerLayer = 7;
 
+    [SerializeField] bool resetGame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,14 @@ public class Door : MonoBehaviour
     {
         if (playerCount == 3)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (resetGame)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 

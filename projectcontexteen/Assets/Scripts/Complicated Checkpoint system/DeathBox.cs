@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DeathBox : MonoBehaviour
+{
+    [SerializeField] private RespawnSystem respawnSystem;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (respawnSystem != null)
+            {
+                respawnSystem.Respawn();
+            }
+        }
+    }
+}

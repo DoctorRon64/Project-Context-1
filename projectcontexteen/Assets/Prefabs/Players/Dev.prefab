@@ -107,8 +107,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   horizontalInput: 0
-  MoveInput: Horizontal1
-  UpInput: 119
+  MoveInput: Horizontal3
+  UpInput: 264
   jumped: 0
   Casino: 0
   velocite: 0

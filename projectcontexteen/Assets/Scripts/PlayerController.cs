@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,9 +21,9 @@ public class PlayerController : MonoBehaviour
     public string MoveInput;
 	public KeyCode UpInput;
 
-	public bool jumped = false;
-    public int Casino;
-    public float velocite;
+    private bool jumped = false;
+    private int Casino;
+    private float velocite;
 
 	void Awake()
     {
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         Jumping();
         CasionControls();
         velocite = rb2d.velocity.y;
+
     }
 
     void FixedUpdate()
@@ -126,5 +128,10 @@ public class PlayerController : MonoBehaviour
         anim.SetLayerWeight(1, _layer2);
         anim.SetLayerWeight(2, _layer3);
     }
+
+    private void SetOptions()
+	{
+
+	}
 }
 

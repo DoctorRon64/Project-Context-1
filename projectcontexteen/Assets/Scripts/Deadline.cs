@@ -10,6 +10,7 @@ public class Deadline : MonoBehaviour
     public float currentTime;
     public float maxTime = 100;
 
+    public GameObject deadlineCanvas;
     public TextMeshProUGUI deadlineTimerText;
     public Slider progressBar;
 
@@ -43,6 +44,12 @@ public class Deadline : MonoBehaviour
 
     void DeadlineHit() // Call function when time has hit 0
     {
+        StartCoroutine(GameOverProcess());
+    }
+    IEnumerator GameOverProcess() // Shows cute graphic on screen before fading to black
+    {
+        deadlineCanvas.GetComponentInChildren<Animator>().SetTrigger("TimesUp");
+        yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene("4.GameOver");
     }
 

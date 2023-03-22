@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MagicObjectBehaviour : MonoBehaviour
+public class PointOfCreationScript : MonoBehaviour
 {
 	public int ArtValues;
 	public int DesignValues;
 	public int DevValues;
 
-	public MagicObject magicobjecto;
+	public MagicObjectCollider magicobjecto;
 	public Button[] ClickableArtButtons;
 	public Button[] ClickableDesButtons;
 	public Button[] ClickableDevButtons;
@@ -26,7 +26,7 @@ public class MagicObjectBehaviour : MonoBehaviour
 
 	private void Awake()
 	{
-		magicobjecto = GetComponentInChildren<MagicObject>();
+		magicobjecto = GetComponentInChildren<MagicObjectCollider>();
 		boxcol = GetComponent<BoxCollider2D>();
 	}
 

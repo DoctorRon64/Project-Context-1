@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2958165324827365820}
   - component: {fileID: 2958165324827365821}
   - component: {fileID: 2958165324827365818}
+  - component: {fileID: 46172287120254758}
   m_Layer: 7
   m_Name: Dev
   m_TagString: Untagged
@@ -109,9 +110,34 @@ MonoBehaviour:
   horizontalInput: 0
   MoveInput: Horizontal3
   UpInput: 264
-  jumped: 0
-  Casino: 0
-  velocite: 0
+--- !u!114 &46172287120254758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958165324536715016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94ea3cfdc7702844bd2d131ead24325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Option1: 267
+  Option2: 268
+  MagicObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  POC:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Option1Button: {fileID: 0}
+  Option2Button: {fileID: 0}
 --- !u!1 &2958165324817885364
 GameObject:
   m_ObjectHideFlags: 0

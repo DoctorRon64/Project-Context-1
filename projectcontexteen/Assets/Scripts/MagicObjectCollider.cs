@@ -5,7 +5,7 @@ using Unity.Collections;
 using UnityEngine.UI;
 using TMPro;
 
-public class MagicObject : MonoBehaviour
+public class MagicObjectCollider : MonoBehaviour
 {
 	public GameObject InteractiveArtHUD;
 	public GameObject InteractiveDesignHUD;

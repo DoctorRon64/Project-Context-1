@@ -8,8 +8,7 @@ public class PlayerKeyInputController : MonoBehaviour
     [SerializeField] private KeyCode Option1;
     [SerializeField] private KeyCode Option2;
 
-	[SerializeField] private MagicObject[] MagicObjects = new MagicObject[5];
-	[SerializeField] private MagicObjectBehaviour[] POC = new MagicObjectBehaviour[5];
+	[SerializeField] private MagicObjectCollider[] MagicObjects = new MagicObjectCollider[5];
 	[SerializeField] private Button Option1Button, Option2Button;
 
 	private void Update()
@@ -33,6 +32,7 @@ public class PlayerKeyInputController : MonoBehaviour
 				if (MagicObjects[i].PlayerInRange == true)
 				{
 					_button?.onClick.Invoke();
+					Debug.Log("jo");
 				}
 			}
 		}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 597312769220562436}
   - component: {fileID: 597312769220562437}
   - component: {fileID: 597312769220562442}
+  - component: {fileID: -6164053803294250165}
   m_Layer: 7
   m_Name: Artist
   m_TagString: Untagged
@@ -111,6 +112,30 @@ MonoBehaviour:
   UpInput: 119
   jumped: 0
   velocite: 0
+--- !u!114 &-6164053803294250165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597312769220562434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7005a3d6a5bf68e40bc19c7f415e4ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Option1: 49
+  Option2: 50
+  MagicObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Option1Button: {fileID: 0}
+  Option2Button: {fileID: 0}
+  Option3: 51
+  Option3Button: {fileID: 0}
 --- !u!1 &956793276976291875
 GameObject:
   m_ObjectHideFlags: 0

@@ -263,29 +263,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2114071554141571577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60d7eaa35f854741aa7bae3ac12fe40, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e871c665efc843aa3ed109fdb3adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ArtValues: 0
   DesignValues: 0
   DevValues: 0
-  magicobjecto: {fileID: 0}
-  ClickableArtButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ClickableDesButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  ClickableDevButtons:
-  - {fileID: 0}
-  - {fileID: 0}
+  magicobjecto: {fileID: 952734456081466428}
+  ClickableArtButtons: []
+  ClickableDesButtons: []
+  ClickableDevButtons: []
   ArtistObject:
   - {fileID: 4894066079619724159, guid: cb598275f2a627c4a9d8bd4bea9260a6, type: 3}
   - {fileID: 2960009483896144392, guid: a2c39feb9f10d3543b7239cd197f11d0, type: 3}
   - {fileID: 2993030615296366551, guid: 17ed506c6c375e0439e68e1a4cc965db, type: 3}
   InstantObj: {fileID: 0}
   SpriteStuff: {fileID: 4384261422239966769}
+  MagicUsed: 0
 --- !u!1 &2114071554235727399
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +801,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8855970688537496313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e421ea2a1cc690247a1307de9d48fd4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 460d223e5877393498c475f514c51432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractiveArtHUD: {fileID: 0}

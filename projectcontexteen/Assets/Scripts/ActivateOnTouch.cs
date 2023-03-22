@@ -6,13 +6,13 @@ public class ActivateOnTouch : MonoBehaviour
 {
 	[SerializeField] private GrowAndShrink growandshrink;
 	[SerializeField] private FlyAroundInCircles flyaround;
-	[SerializeField] private MagicObjectBehaviour magicalobject;
-	[SerializeField] private MagicObject checkIfPlayerIsInHood;
+	[SerializeField] private PointOfCreationScript magicalobject;
+	[SerializeField] private MagicObjectCollider checkIfPlayerIsInHood;
 
 	private void Awake()
 	{
-		magicalobject = gameObject.transform.parent.GetComponent<MagicObjectBehaviour>();
-		checkIfPlayerIsInHood = magicalobject.GetComponentInChildren<MagicObject>();
+		magicalobject = gameObject.transform.parent.GetComponent<PointOfCreationScript>();
+		checkIfPlayerIsInHood = magicalobject.GetComponentInChildren<MagicObjectCollider>();
 
 		flyaround = GetComponent<FlyAroundInCircles>();
 		growandshrink = GetComponent<GrowAndShrink>();

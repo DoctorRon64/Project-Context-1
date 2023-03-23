@@ -12,6 +12,7 @@ public class Deadline : MonoBehaviour
 
     public GameObject deadlineCanvas;
     public TextMeshProUGUI deadlineTimerText;
+    public GameObject Canvas;
     public Slider progressBar;
 
     // Start is called before the first frame update
@@ -49,6 +50,7 @@ public class Deadline : MonoBehaviour
     IEnumerator GameOverProcess() // Shows cute graphic on screen before fading to black
     {
         deadlineCanvas.GetComponentInChildren<Animator>().SetTrigger("TimesUp");
+        Canvas.SetActive(false);
         yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene("4.GameOver");
     }
@@ -58,7 +60,6 @@ public class Deadline : MonoBehaviour
         deadlineTimerText.text = currentTime.ToString("F1");
         progressBar.value = currentTime;
     }
-
 
     public void DecreaseTimeBy(float amount) // Decrease the time by a specific amount instantly
     {

@@ -83688,6 +83688,10 @@ PrefabInstance:
       value: Deadline Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3462973446929875723, guid: 01e36001f2f16b24bbf815a273a7d7b6, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 2098299846}
+    - target: {fileID: 3462973446929875723, guid: 01e36001f2f16b24bbf815a273a7d7b6, type: 3}
       propertyPath: progressBar
       value: 
       objectReference: {fileID: 1204892974}
@@ -83701,6 +83705,11 @@ PrefabInstance:
       objectReference: {fileID: 1204892973}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01e36001f2f16b24bbf815a273a7d7b6, type: 3}
+--- !u!1 &2098299846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5029820826263784810, guid: fbefa8b8f4e9acc428eb87abc4531095, type: 3}
+  m_PrefabInstance: {fileID: 396239266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2111243304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5029820824378319225, guid: fbefa8b8f4e9acc428eb87abc4531095, type: 3}

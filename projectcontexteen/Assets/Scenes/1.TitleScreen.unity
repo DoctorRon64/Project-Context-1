@@ -1510,3 +1510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e5a0057c0b6654a85055f517f666ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputA: 101
+  InputB: 331
+  InputC: 267

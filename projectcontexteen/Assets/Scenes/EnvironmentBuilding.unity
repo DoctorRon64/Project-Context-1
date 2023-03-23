@@ -806,7 +806,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60d7eaa35f854741aa7bae3ac12fe40, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e871c665efc843aa3ed109fdb3adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &542392274 stripped
@@ -3280,7 +3280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60d7eaa35f854741aa7bae3ac12fe40, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e871c665efc843aa3ed109fdb3adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &841108803 stripped
@@ -3627,7 +3627,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60d7eaa35f854741aa7bae3ac12fe40, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e871c665efc843aa3ed109fdb3adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1316080521 stripped
@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60d7eaa35f854741aa7bae3ac12fe40, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e871c665efc843aa3ed109fdb3adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1434392245
@@ -4097,7 +4097,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60d7eaa35f854741aa7bae3ac12fe40, type: 3}
+  m_Script: {fileID: 11500000, guid: d04e871c665efc843aa3ed109fdb3adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1612490483 stripped
@@ -84370,6 +84370,11 @@ PrefabInstance:
       objectReference: {fileID: 841108803}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+--- !u!1 &1857853654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2295607706553034872, guid: 08cb7ce6fece4994eb60736e7e5b7819, type: 3}
+  m_PrefabInstance: {fileID: 824429124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1873887115 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2295607706103383060, guid: 08cb7ce6fece4994eb60736e7e5b7819, type: 3}
@@ -84727,6 +84732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deadline Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3462973446929875723, guid: 01e36001f2f16b24bbf815a273a7d7b6, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 1857853654}
     - target: {fileID: 3462973446929875723, guid: 01e36001f2f16b24bbf815a273a7d7b6, type: 3}
       propertyPath: progressBar
       value: 

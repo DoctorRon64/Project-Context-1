@@ -6,7 +6,6 @@ public class FlyAroundInCircles : MonoBehaviour
 {
     public flyindexitem[] IndexToMoveTo = new flyindexitem[4];
     public int FlyIndex = 0;
-	public int cooldown = 1;
 	public int speed = 5;
 
 	public bool STOP;
@@ -15,7 +14,6 @@ public class FlyAroundInCircles : MonoBehaviour
 	private void Start()
 	{
 		getIndexesFlying();
-		StartCoroutine(WaitForNewFlyIndex());
 	}
 
 	private void Update()
@@ -29,14 +27,11 @@ public class FlyAroundInCircles : MonoBehaviour
 		{
 			transform.position = Vector2.MoveTowards(transform.position, IndexToMoveTo[FlyIndex].transform.position, Time.deltaTime * speed);
 		}
-	}
 
-	IEnumerator WaitForNewFlyIndex()
-	{
-
-		yield return new WaitForSeconds(cooldown);
-		FlyIndex++;
-		StartCoroutine(WaitForNewFlyIndex());
+		if (Vector2.Distance(transform.position, IndexToMoveTo[FlyIndex].transform.position) < 0.5f)
+		{
+			FlyIndex++;
+		}
 	}
 
 	private void getIndexesFlying()

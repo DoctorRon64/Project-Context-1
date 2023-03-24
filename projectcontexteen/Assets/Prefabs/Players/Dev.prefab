@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 46172287120254758}
   m_Layer: 7
   m_Name: Dev
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 6200000, guid: 0083c4eae5e579746a15c40b5e8578f3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -96,10 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e282645e3afa4f4ea190918fe7ce3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 16
-  JumpHeight: 22
-  OverlapSphere: 0.01
-  FallSpeed: 30
+  Speed: 20
+  JumpHeight: 55
+  OverlapSphere: 0.1
+  FallSpeed: 5
   anim: {fileID: 2958165324817885367}
   sprtRndr: {fileID: 2958165324817885366}
   groundCheck: {fileID: 2958165326121564743}
@@ -125,12 +125,6 @@ MonoBehaviour:
   Option1: 267
   Option2: 268
   MagicObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  POC:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

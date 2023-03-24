@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void Idle()
 	{
-        if (!Input.GetKey(UpInput) && horizontalInput == 0 && velocite == 0)
+        if (!Input.GetKey(UpInput) && horizontalInput == 0)
         {
             SetLayerWeights(1, 0, 0);
 

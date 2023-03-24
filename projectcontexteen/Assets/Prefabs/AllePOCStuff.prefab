@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: ClickableDevButtons.Array.data[1]
       value: 
       objectReference: {fileID: 5029820825908257030}
+    - target: {fileID: 8855970688537496313, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: m_Name
+      value: 4Collider
+      objectReference: {fileID: 0}
     - target: {fileID: 8891290219818686301, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: InteractiveArtHUD
       value: 
@@ -353,6 +357,10 @@ PrefabInstance:
       propertyPath: ClickableDevButtons.Array.data[1]
       value: 
       objectReference: {fileID: 5029820825908257030}
+    - target: {fileID: 8855970688537496313, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: m_Name
+      value: 5Collider
+      objectReference: {fileID: 0}
     - target: {fileID: 8891290219818686301, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: InteractiveArtHUD
       value: 
@@ -526,6 +534,10 @@ PrefabInstance:
       propertyPath: ClickableDevButtons.Array.data[1]
       value: 
       objectReference: {fileID: 5029820825908257030}
+    - target: {fileID: 8855970688537496313, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: m_Name
+      value: 2Collider
+      objectReference: {fileID: 0}
     - target: {fileID: 8891290219818686301, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: InteractiveArtHUD
       value: 
@@ -1785,6 +1797,10 @@ PrefabInstance:
       propertyPath: ClickableDevButtons.Array.data[1]
       value: 
       objectReference: {fileID: 5029820825908257030}
+    - target: {fileID: 8855970688537496313, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: m_Name
+      value: 1Collider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
 --- !u!114 &5819487919675389474 stripped
@@ -1946,6 +1962,10 @@ PrefabInstance:
       propertyPath: ClickableDevButtons.Array.data[1]
       value: 
       objectReference: {fileID: 5029820825908257030}
+    - target: {fileID: 8855970688537496313, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
+      propertyPath: m_Name
+      value: 3Collider
+      objectReference: {fileID: 0}
     - target: {fileID: 8891290219818686301, guid: 89879df69e641f44395ff8f2273d5983, type: 3}
       propertyPath: InteractiveArtHUD
       value: 

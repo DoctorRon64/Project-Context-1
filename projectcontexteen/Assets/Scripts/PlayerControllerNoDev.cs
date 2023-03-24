@@ -49,7 +49,7 @@ public class PlayerControllerNoDev : MonoBehaviour
 
     void Idle()
 	{
-        if (jumped == false && horizontalInput == 0 && velocite == 0)
+        if (jumped == false && horizontalInput == 0)
         {
             SetLayerWeights(1, 0);
             anim.SetBool("Walking", false);
@@ -72,7 +72,7 @@ public class PlayerControllerNoDev : MonoBehaviour
         {
             SetLayerWeights(1, 0);
             anim.SetBool("Walking", true);
-        } 
+        }
     }
 
     void Jumping()

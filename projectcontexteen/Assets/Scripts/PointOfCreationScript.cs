@@ -93,6 +93,8 @@ public class PointOfCreationScript : MonoBehaviour
 	//design stuff
 	private void Designefy()
 	{
+		magicobjecto.transform.position = InstantObj.transform.position;
+		magicobjecto.transform.parent = InstantObj.transform;
 		InstantObj.AddComponent<FlyAroundInCircles>();
 		InstantObj.AddComponent<GrowAndShrink>();
 	}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5458530896382033175}
   - component: {fileID: 5458530896382033172}
   - component: {fileID: 5458530896382033173}
-  - component: {fileID: -1934384390200015676}
   m_Layer: 7
   m_Name: Designer
   m_TagString: Player
@@ -112,28 +111,6 @@ MonoBehaviour:
   UpInput: 273
   jumped: 0
   velocite: 0
---- !u!114 &-1934384390200015676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5458530896382033178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94ea3cfdc7702844bd2d131ead24325, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Option1: 330
-  Option2: 331
-  MagicObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Option1Button: {fileID: 0}
-  Option2Button: {fileID: 0}
 --- !u!1 &5458530896953868064
 GameObject:
   m_ObjectHideFlags: 0

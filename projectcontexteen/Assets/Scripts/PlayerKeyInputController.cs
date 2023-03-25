@@ -5,19 +5,16 @@ using UnityEngine.UI;
 
 public class PlayerKeyInputController : MonoBehaviour
 {
-    [SerializeField] private KeyCode Option1;
-    [SerializeField] private KeyCode Option2;
+    [SerializeField] protected KeyCode Option1;
+    [SerializeField] protected KeyCode Option2;
 
-	private MagicObjectCollider[] MagicObjects = new MagicObjectCollider[5];
-	private PointOfCreationScript[] POC = new PointOfCreationScript[5];
-	[SerializeField] private Button Option1Button, Option2Button;
-	[SerializeField] private GameObject AllPOCs;
+	protected MagicObjectCollider[] MagicObjects = new MagicObjectCollider[5];
+	[SerializeField] protected Button Option1Button, Option2Button;
+	[SerializeField] protected GameObject AllPOCs;
 
 	private void Awake()
 	{
-
 		MagicObjects = AllPOCs.GetComponentsInChildren<MagicObjectCollider>();
-		POC = AllPOCs.GetComponentsInChildren<PointOfCreationScript>();
 	}
 
 	private void Update()
@@ -34,7 +31,7 @@ public class PlayerKeyInputController : MonoBehaviour
 
 	public void WhenPressedKey(KeyCode _optionkey, Button _button)
 	{
-		if (Input.GetKey(_optionkey))
+		if (Input.GetKeyDown(_optionkey))
 		{
 			for (int i = 0; i < MagicObjects.Length; i++)
 			{

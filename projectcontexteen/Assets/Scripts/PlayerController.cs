@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public string MoveInput;
 	public KeyCode UpInput;
 
-    private bool jumped = false;
     private int Casino;
     private float velocite;
 

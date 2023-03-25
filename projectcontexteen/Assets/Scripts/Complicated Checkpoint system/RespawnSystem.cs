@@ -7,8 +7,8 @@ public class RespawnSystem : MonoBehaviour
     public GameObject[] players;
     public List<GameObject> checkpoints;
 
-    private Vector2[] startingPositions;
-    private GameObject currentCheckpoint;
+    [SerializeField] private Vector2[] startingPositions;
+    [SerializeField] private GameObject currentCheckpoint;
 
     private void Start()
     {
@@ -19,21 +19,15 @@ public class RespawnSystem : MonoBehaviour
         }
     }
 
-    public void Respawn()
+    public void Respawn(GameObject _player, int _index)
     {
         if (currentCheckpoint != null)
         {
-            foreach (GameObject player in players)
-            {
-                player.transform.position = currentCheckpoint.transform.position;
-            }
+            _player.transform.position = currentCheckpoint.transform.position;
         }
         else
         {
-            for (int i = 0; i < players.Length; i++)
-            {
-                players[i].transform.position = startingPositions[i];
-            }
+            _player.transform.position = startingPositions[_index];
         }
     }
 

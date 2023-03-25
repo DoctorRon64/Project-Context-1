@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private int Casino;
     private float velocite;
 
-	void Awake()
+    void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         Jumping();
         CasionControls();
         velocite = rb2d.velocity.y;
-
     }
 
     void FixedUpdate()
@@ -129,9 +128,6 @@ public class PlayerController : MonoBehaviour
         anim.SetLayerWeight(2, _layer3);
     }
 
-    private void SetOptions()
-	{
-
-	}
+	
 }
 

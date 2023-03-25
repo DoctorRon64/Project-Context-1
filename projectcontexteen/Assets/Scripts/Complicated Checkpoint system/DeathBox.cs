@@ -12,7 +12,9 @@ public class DeathBox : MonoBehaviour
         {
             if (respawnSystem != null)
             {
-                respawnSystem.Respawn();
+                if (collision.name == "Artist") { respawnSystem.Respawn(collision.gameObject, 0); }
+                if (collision.name == "Designer") { respawnSystem.Respawn(collision.gameObject, 1); }
+                if (collision.name == "Dev") { respawnSystem.Respawn(collision.gameObject, 2); }
             }
         }
     }

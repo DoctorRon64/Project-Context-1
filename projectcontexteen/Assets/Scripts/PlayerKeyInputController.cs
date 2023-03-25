@@ -9,6 +9,7 @@ public class PlayerKeyInputController : MonoBehaviour
     [SerializeField] private KeyCode Option2;
 
 	private MagicObjectCollider[] MagicObjects = new MagicObjectCollider[5];
+	private PointOfCreationScript[] POC = new PointOfCreationScript[5];
 	[SerializeField] private Button Option1Button, Option2Button;
 	[SerializeField] private GameObject AllPOCs;
 
@@ -16,10 +17,7 @@ public class PlayerKeyInputController : MonoBehaviour
 	{
 
 		MagicObjects = AllPOCs.GetComponentsInChildren<MagicObjectCollider>();
-		/*for (int i = 0; i < AllPOCs.GetComponentsInChildren<MagicObjectCollider>().Length; i++)
-		{
-			MagicObjects[i] = AllPOCs.GetComponentInChildren<MagicObjectCollider>();
-		}*/
+		POC = AllPOCs.GetComponentsInChildren<PointOfCreationScript>();
 	}
 
 	private void Update()
@@ -43,9 +41,11 @@ public class PlayerKeyInputController : MonoBehaviour
 				if (MagicObjects[i].PlayerInRange == true)
 				{
 					_button?.onClick.Invoke();
-					Debug.Log("jo");
+					Debug.Log(_optionkey);
 				}
 			}
 		}
 	}
+
+	
 }

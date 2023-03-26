@@ -5,6 +5,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private RespawnSystem respawnSystem;
+    private Animator anim { get { return GetComponentInChildren<Animator>(); } }
     public float checkpointRange = 1f;
     private bool activated = false;
 
@@ -16,6 +17,7 @@ public class Checkpoint : MonoBehaviour
             {
                 respawnSystem.UpdateCheckpoint(gameObject);
                 activated = true;
+                anim.SetBool("CheckpointActive", true);
             }
         }
     }

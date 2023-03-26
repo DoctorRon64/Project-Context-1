@@ -10,9 +10,11 @@ public class PlayerKeyInputDesign : MonoBehaviour
     private MagicObjectCollider[] magicObjects;
     [SerializeField] private GameObject AllPOC;
     private bool usingGamepad;
+    private CreateAudioForObject audit;
 
     private void Awake()
     {
+        audit = GetComponent<CreateAudioForObject>();
         magicObjects = AllPOC.GetComponentsInChildren<MagicObjectCollider>();
         usingGamepad = Input.GetJoystickNames().Length > 0;
     }
@@ -22,7 +24,7 @@ public class PlayerKeyInputDesign : MonoBehaviour
         if (usingGamepad)
         {
 
-            if (Input.GetButtonDown("ButtonA"))
+            if (Input.GetButtonDown("ButtonB"))
             {
                 Debug.Log("ButtonA");
                 ActivateMagicObject(Option1Butt);
@@ -32,16 +34,15 @@ public class PlayerKeyInputDesign : MonoBehaviour
                 Debug.Log("ButtonA");
             }
 
-			if (Input.GetButtonDown("ButtonB"))
+            if (Input.GetButtonDown("ButtonA"))
 			{
                 Debug.Log("ButtonB");
                 ActivateMagicObject(Option2Butt);
-			}
+            }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
 			{
                 Debug.Log("ButtonB");
             }
-
         }
     }
 
@@ -52,6 +53,7 @@ public class PlayerKeyInputDesign : MonoBehaviour
             if (magicObject.PlayerInRange)
             {
                 _button?.onClick.Invoke();
+                audit.PlayAudio(0);
             }
         }
     }

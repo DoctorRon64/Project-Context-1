@@ -34,7 +34,7 @@ public class MagicObjectCollider : MonoBehaviour
 			} else if (collision.gameObject.name == "Dev")
 			{
 				InteractiveDevHUD.SetActive(true);
-			} 
+			}
 		}
 	}
 

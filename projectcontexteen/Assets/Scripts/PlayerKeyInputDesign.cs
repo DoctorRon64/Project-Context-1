@@ -21,24 +21,27 @@ public class PlayerKeyInputDesign : MonoBehaviour
     {
         if (usingGamepad)
         {
-            for (int i = 0; i < 20; i++)
+
+            if (Input.GetButtonDown("ButtonA"))
             {
-                if (Input.GetKeyDown("joystick button " + i))
-                {
-                    Debug.Log("Joystick Button " + i + " is pressed.");
-                }
-            }
-/*
-            if (Input.GetKey(KeyCode.JoystickButton0))
-            {
-                ActivateMagicObject(Option1Butt);
                 Debug.Log("ButtonA");
-            }*/
-            /*else if (Input.GetButton("ButtonB"))
-            {
-                ActivateMagicObject(Option2Butt);
+                ActivateMagicObject(Option1Butt);
+            }
+            else if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+			{
+                Debug.Log("ButtonA");
+            }
+
+			if (Input.GetButtonDown("ButtonB"))
+			{
                 Debug.Log("ButtonB");
-            }*/
+                ActivateMagicObject(Option2Butt);
+			}
+            else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+			{
+                Debug.Log("ButtonB");
+            }
+
         }
     }
 

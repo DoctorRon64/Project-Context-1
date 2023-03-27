@@ -24,6 +24,18 @@ public class RespawnSystem : MonoBehaviour
         if (currentCheckpoint != null)
         {
             _player.transform.position = currentCheckpoint.transform.position;
+            switch (_index)
+			{
+                case 0:
+                    PlayerControllerNoDev playcont0 = players[0].GetComponent<PlayerControllerNoDev>();
+                    playcont0.SetVelocityFunc(0f); break;
+                case 1:
+                    PlayerControllerNoDev playcont1 = players[1].GetComponent<PlayerControllerNoDev>();
+                    playcont1.SetVelocityFunc(0f); break;
+                case 2:
+                    PlayerController playcont2 = players[2].GetComponent<PlayerController>();
+                    playcont2.SetVelocityFunc(0f); break;
+            }
         }
         else
         {

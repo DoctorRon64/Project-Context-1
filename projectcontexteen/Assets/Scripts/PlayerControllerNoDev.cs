@@ -129,5 +129,11 @@ public class PlayerControllerNoDev : MonoBehaviour
         anim.SetLayerWeight(0, _layer1);
         anim.SetLayerWeight(1, _layer2);
     }
+    public void SetVelocityFunc(float _velocity)
+    {
+        Vector2 newVelocity = rb2d.velocity;
+        newVelocity.y = _velocity;
+        rb2d.velocity = newVelocity;
+    }
 }
 

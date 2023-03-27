@@ -72,6 +72,6 @@ public class MultipeleTargets : MonoBehaviour
             bounds.Encapsulate(targets[i].position);
         }
 
-        return new Vector3(bounds.center.x, bounds.center.y, transform.position.z);
+        return new Vector3(bounds.center.x, bounds.center.y, 0f);
     }
 }

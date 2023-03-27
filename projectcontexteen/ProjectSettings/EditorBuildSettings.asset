@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/2.Tutorial.unity
     guid: 11b4df7a75af4934895a90007011a8d8
   - enabled: 1
-    path: Assets/Scenes/RickLevelDesign.unity
+    path: Assets/Scenes/3.RickLevelDesign.unity
     guid: d36c4b58eb347514792088f095f5aeb9
   - enabled: 1
     path: Assets/Scenes/5.VictoryScreen.unity

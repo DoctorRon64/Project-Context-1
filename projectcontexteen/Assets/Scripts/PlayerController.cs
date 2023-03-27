@@ -24,8 +24,11 @@ public class PlayerController : MonoBehaviour
     private int Casino;
     private float velocite;
 
+    private CreateAudioForObject audit;
+
     void Awake()
     {
+        audit = GetComponent<CreateAudioForObject>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(UpInput) && IsGrounded())
         {
             rb2d.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
+            audit.PlayAudio(2);
         }
     }
 

@@ -11,9 +11,11 @@ public class PlayerKeyInputController : MonoBehaviour
 	protected MagicObjectCollider[] MagicObjects = new MagicObjectCollider[5];
 	[SerializeField] protected Button Option1Button, Option2Button;
 	[SerializeField] protected GameObject AllPOCs;
+	private CreateAudioForObject audit;
 
 	private void Awake()
 	{
+		audit = GetComponent<CreateAudioForObject>();
 		MagicObjects = AllPOCs.GetComponentsInChildren<MagicObjectCollider>();
 	}
 
@@ -39,6 +41,7 @@ public class PlayerKeyInputController : MonoBehaviour
 				{
 					_button?.onClick.Invoke();
 					Debug.Log(_optionkey);
+					audit.PlayAudio(0);
 				}
 			}
 		}

@@ -6,18 +6,12 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public KeyCode InputA;
-    public KeyCode InputB;
     public KeyCode InputC;
 
-    void Start()
+	// Update is called once per frame
+	void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(InputA) && Input.GetKey(InputB) && Input.GetKey(InputC))
+        if (Input.GetKey(InputA) && Input.GetButtonDown("ButtonB") && Input.GetKey(InputC))
         {
             StartTheGame();
         }
@@ -26,9 +20,9 @@ public class StartGame : MonoBehaviour
         {
             Debug.Log("E Key pressed");
         }
-        if (Input.GetKey(InputB))
+        if (Input.GetButtonDown("ButtonB"))
         {
-            Debug.Log("A Button pressed");
+            Debug.Log("ButtonA");
         }
         if (Input.GetKey(InputC))
         {

@@ -22,7 +22,7 @@ public class PointOfCreationScript : MonoBehaviour
 	public GameObject SpriteStuff;
 
 	private bool PlayerInRange;
-	[SerializeField] private bool MagicUsed = false;
+	public bool MagicUsed = false;
 
 	private void Awake()
 	{
@@ -76,6 +76,9 @@ public class PointOfCreationScript : MonoBehaviour
                 Designefy();
                 Devify();
 				MagicUsed = true;
+
+				magicobjecto = GetComponentInChildren<MagicObjectCollider>();
+				magicobjecto.SetOffCanvas();
             }
         }
 	}

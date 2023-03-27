@@ -23,32 +23,66 @@ public class ActivateOnTouch : MonoBehaviour
 
 	private void Update()
 	{
-		if (magicalobject.DesignValues == 1)
-		{
-			if (checkIfPlayerIsInHood.PlayerInRange == true)
-			{
-				flyaround.STOP = false;
-				growandshrink.STOP = true;
-			} 
-			else
-			{
-				flyaround.STOP = true;
-				growandshrink.STOP = true;
-			}
-		}
+        if (magicalobject.DevValues == 1)
+        {
+            if (magicalobject.DesignValues == 1)
+            {
+                if (checkIfPlayerIsInHood.PlayerInRange == true)
+                {
+                    flyaround.STOP = false;
+                    growandshrink.STOP = true;
+                }
+                else
+                {
+                    flyaround.STOP = true;
+                    growandshrink.STOP = true;
+                }
+            }
 
-		if (magicalobject.DesignValues == 2)
-		{
-			if (checkIfPlayerIsInHood.PlayerInRange == true)
-			{
-				flyaround.STOP = true;
-				growandshrink.STOP = false;
-			}
-			else
-			{
-				flyaround.STOP = true;
-				growandshrink.STOP = true;
-			}
-		}
-	}
-}	
+            if (magicalobject.DesignValues == 2)
+            {
+                if (checkIfPlayerIsInHood.PlayerInRange == true)
+                {
+                    flyaround.STOP = true;
+                    growandshrink.STOP = false;
+                }
+                else
+                {
+                    flyaround.STOP = true;
+                    growandshrink.STOP = true;
+                }
+            }
+        }
+
+        if (magicalobject.DevValues == 2)
+        {
+            if (magicalobject.DesignValues == 1)
+            {
+                if (checkIfPlayerIsInHood.PlayerInRange == false)
+                {
+                    flyaround.STOP = false;
+                    growandshrink.STOP = true;
+                }
+                else
+                {
+                    flyaround.STOP = true;
+                    growandshrink.STOP = true;
+                }
+            }
+
+            if (magicalobject.DesignValues == 2)
+            {
+                if (checkIfPlayerIsInHood.PlayerInRange == false)
+                {
+                    flyaround.STOP = true;
+                    growandshrink.STOP = false;
+                }
+                else
+                {
+                    flyaround.STOP = true;
+                    growandshrink.STOP = true;
+                }
+            }
+        }
+    }
+}

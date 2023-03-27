@@ -10,12 +10,15 @@ public class MagicObjectCollider : MonoBehaviour
 	public GameObject InteractiveArtHUD;
 	public GameObject InteractiveDesignHUD;
 	public GameObject InteractiveDevHUD;
-	
+
+	private PointOfCreationScript POC;
 	public bool PlayerInRange = false;
 
 	private void Start()
 	{
-		InteractiveArtHUD.SetActive(false);
+		POC = GetComponentInParent<PointOfCreationScript>();
+
+        InteractiveArtHUD.SetActive(false);
 		InteractiveDesignHUD.SetActive(false);
 		InteractiveDevHUD.SetActive(false);
 	}
@@ -25,16 +28,22 @@ public class MagicObjectCollider : MonoBehaviour
 		if (collision.CompareTag("Player"))
 		{
 			PlayerInRange = true;
-			if (collision.gameObject.name == "Artist")
+
+			if (POC.MagicUsed == false)
 			{
-				InteractiveArtHUD.SetActive(true);
-			} else if (collision.gameObject.name == "Designer")
-			{
-				InteractiveDesignHUD.SetActive(true);
-			} else if (collision.gameObject.name == "Dev")
-			{
-				InteractiveDevHUD.SetActive(true);
-			}
+                if (collision.gameObject.name == "Artist")
+                {
+                    InteractiveArtHUD.SetActive(true);
+                }
+                else if (collision.gameObject.name == "Designer")
+                {
+                    InteractiveDesignHUD.SetActive(true);
+                }
+                else if (collision.gameObject.name == "Dev")
+                {
+                    InteractiveDevHUD.SetActive(true);
+                }
+            }
 		}
 	}
 
@@ -57,4 +66,11 @@ public class MagicObjectCollider : MonoBehaviour
 			}
 		}
 	}
+
+	public void SetOffCanvas()
+	{
+        InteractiveArtHUD.SetActive(false);
+        InteractiveDesignHUD.SetActive(false);
+        InteractiveDevHUD.SetActive(false);
+    }
 }

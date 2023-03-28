@@ -21,7 +21,7 @@ public class PlayerKeyInputDesign : MonoBehaviour
 
     private void Update()
     {
-        if (usingGamepad)
+        //if (usingGamepad)
         {
 
             if (Input.GetButtonDown("ButtonB"))
@@ -29,9 +29,10 @@ public class PlayerKeyInputDesign : MonoBehaviour
                 Debug.Log("ButtonA");
                 ActivateMagicObject(Option1Butt);
             }
-            else if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            else if (Input.GetKeyDown(KeyCode.Pause))
 			{
                 Debug.Log("ButtonA");
+                ActivateMagicObject(Option1Butt);
             }
 
             if (Input.GetButtonDown("ButtonA"))
@@ -39,9 +40,10 @@ public class PlayerKeyInputDesign : MonoBehaviour
                 Debug.Log("ButtonB");
                 ActivateMagicObject(Option2Butt);
             }
-            else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            else if (Input.GetKeyDown(KeyCode.End))
 			{
                 Debug.Log("ButtonB");
+                ActivateMagicObject(Option2Butt);
             }
         }
     }

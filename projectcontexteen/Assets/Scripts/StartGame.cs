@@ -11,7 +11,7 @@ public class StartGame : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        if (Input.GetKey(InputA) && Input.GetButtonDown("ButtonB") && Input.GetKey(InputC))
+        if (Input.GetKey(InputA) && (Input.GetButton("ButtonB") || Input.GetKey(KeyCode.Pause)) && Input.GetKey(InputC))
         {
             StartTheGame();
         }

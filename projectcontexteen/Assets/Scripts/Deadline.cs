@@ -39,6 +39,7 @@ public class Deadline : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            currentTime = 0;
             DeadlineHit();
         }
     }

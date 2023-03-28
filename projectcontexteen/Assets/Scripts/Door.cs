@@ -11,10 +11,19 @@ public class Door : MonoBehaviour
 
     [SerializeField] bool resetGame;
 
+    Deadline deadline;
+    FinalScore finalScore;
+    bool foundScoreScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        deadline = FindObjectOfType<Deadline>();
+        if (FindObjectOfType<FinalScore>() != null)
+        {
+            foundScoreScript = true;
+            finalScore = FindObjectOfType<FinalScore>();
+        }
     }
 
     // Update is called once per frame
@@ -24,10 +33,14 @@ public class Door : MonoBehaviour
         {
             if (resetGame)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(2);
             }
             else
             {
+                if (foundScoreScript)
+                {
+                    finalScore.GetFinalTime(deadline.currentTime);
+                }
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

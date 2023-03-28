@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keyboard 'E'
+  m_text: Keyboard '1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8fcca412e1995246b8a760df954862d, type: 2}
   m_sharedMaterial: {fileID: 2196937645625208319, guid: e8fcca412e1995246b8a760df954862d, type: 2}
@@ -1871,5 +1871,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e5a0057c0b6654a85055f517f666ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputA: 101
+  InputA: 49
   InputC: 267

@@ -33,7 +33,7 @@ public class Door : MonoBehaviour
         {
             if (resetGame)
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
             else
             {

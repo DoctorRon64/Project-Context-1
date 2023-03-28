@@ -420,6 +420,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5079330605561878785, guid: 6ae19308377ebb44285b59e800e60728, type: 3}
+      propertyPath: maxZoom
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079330605561878785, guid: 6ae19308377ebb44285b59e800e60728, type: 3}
       propertyPath: offset.y
       value: 0
       objectReference: {fileID: 0}

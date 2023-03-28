@@ -16,6 +16,7 @@ public class PointOfCreationScript : MonoBehaviour
 	public Button[] ClickableDesButtons;
 	public Button[] ClickableDevButtons;
 
+	public bool[] SetHudOff = new bool[3];
 	public GameObject[] ArtistObject;
 	public GameObject InstantObj;
 	private BoxCollider2D boxcol;
@@ -28,6 +29,10 @@ public class PointOfCreationScript : MonoBehaviour
 	{
 		magicobjecto = GetComponentInChildren<MagicObjectCollider>();
 		boxcol = GetComponent<BoxCollider2D>();
+		for (int i = 0; i < SetHudOff.Length; i++)
+        {
+			SetHudOff[i] = false;
+        }
 	}
 
 	private void Update()
@@ -41,7 +46,9 @@ public class PointOfCreationScript : MonoBehaviour
 		if (PlayerInRange && !MagicUsed)
 		{
 			ArtValues = _parameter;
-
+			SetHudOff[0] = true;
+			magicobjecto.InteractiveArtHUD.SetActive(false);
+			//ANIMATIE SHIT HIER (ergens)
 			CheckifAllTrue();
 		}
 	}
@@ -51,7 +58,9 @@ public class PointOfCreationScript : MonoBehaviour
 		if (PlayerInRange && !MagicUsed)
 		{
 			DesignValues = _parameter;
-
+			SetHudOff[1] = true;
+			magicobjecto.InteractiveDesignHUD.SetActive(false);
+			//ANIMATIE SHIT HIER (ergens)
 			CheckifAllTrue();
 		}
 	}
@@ -61,7 +70,9 @@ public class PointOfCreationScript : MonoBehaviour
 		if (PlayerInRange && !MagicUsed)
 		{
 			DevValues = _parameter;
-
+			SetHudOff[2] = true;
+			magicobjecto.InteractiveDevHUD.SetActive(false);
+			//ANIMATIE SHIT HIER (ergens)
 			CheckifAllTrue();
 		}
 	}

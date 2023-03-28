@@ -31,15 +31,15 @@ public class MagicObjectCollider : MonoBehaviour
 
 			if (POC.MagicUsed == false)
 			{
-                if (collision.gameObject.name == "Artist")
+                if (collision.gameObject.name == "Artist" && !POC.SetHudOff[0])
                 {
                     InteractiveArtHUD.SetActive(true);
                 }
-                else if (collision.gameObject.name == "Designer")
+                else if (collision.gameObject.name == "Designer" && !POC.SetHudOff[1])
                 {
                     InteractiveDesignHUD.SetActive(true);
                 }
-                else if (collision.gameObject.name == "Dev")
+                else if (collision.gameObject.name == "Dev" && !POC.SetHudOff[2])
                 {
                     InteractiveDevHUD.SetActive(true);
                 }

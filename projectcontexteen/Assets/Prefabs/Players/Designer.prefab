@@ -111,7 +111,7 @@ MonoBehaviour:
     m_Bits: 64
   horizontalInput: 0
   MoveInput: Horizontal2
-  UpInput: 273
+  UpInput: 330
   jumped: 0
   velocite: 0
 --- !u!114 &-1060261391987206912
